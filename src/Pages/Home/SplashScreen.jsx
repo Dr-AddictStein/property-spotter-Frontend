@@ -5,7 +5,7 @@ import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { AuthContext } from "../../Provider/AuthProvider";
-import bgImage from "../../assets/bg.jpg";
+import bgImage from "../../assets/images/Splash Screen.jpg";
 const { useForm } = Form;
 
 const SplashScreen = () => {
@@ -192,7 +192,9 @@ const SplashScreen = () => {
             className="flex justify-center bg-center items-center h-screen"
             style={{
                 backgroundImage: `url(${bgImage})`,
-                backgroundRepeat: "repeat",
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
+                width: "100%"
             }}
         >
             <div className="">
