@@ -200,6 +200,21 @@ const PendingSpottedLists = () => {
                                                                         )
                                                                     }
                                                                 >
+                                                                    New
+                                                                </button>
+                                                            </li>
+                                                            <li>
+                                                                <button
+                                                                    className="hover:bg-primary hover:text-white"
+                                                                    onClick={(
+                                                                        e
+                                                                    ) =>
+                                                                        houseUpdate(
+                                                                            e,
+                                                                            house
+                                                                        )
+                                                                    }
+                                                                >
                                                                     sold
                                                                 </button>
                                                             </li>
@@ -404,7 +419,7 @@ const PendingSpottedLists = () => {
                                                             </span>{" "}
                                                             <span className="text-primary font-bold text-2xl">
                                                                 {
-                                                                    selectedHouse?.agent
+                                                                    selectedHouse?.agentName
                                                                 }
                                                             </span>
                                                         </h1>
@@ -414,7 +429,7 @@ const PendingSpottedLists = () => {
                                                             </span>{" "}
                                                             <span className="text-primary font-bold text-2xl">
                                                                 {
-                                                                    selectedHouse?.address
+                                                                    selectedHouse?.address + ", " + selectedHouse?.city + ", " + selectedHouse?.suburb + ", " + selectedHouse?.province
                                                                 }
                                                             </span>
                                                         </h1>
@@ -452,11 +467,10 @@ const PendingSpottedLists = () => {
                             <button
                                 key={i}
                                 onClick={() => paginate(i + 1)}
-                                className={`join-item btn btn-outline btn-primary  text-white mr-2 ${
-                                    currentPage === i + 1
+                                className={`join-item btn btn-outline btn-primary  text-white mr-2 ${currentPage === i + 1
                                         ? "bg-primary border-2 border-black text-white"
                                         : ""
-                                }`}
+                                    }`}
                             >
                                 <span className="text-white">{i + 1}</span>
                             </button>

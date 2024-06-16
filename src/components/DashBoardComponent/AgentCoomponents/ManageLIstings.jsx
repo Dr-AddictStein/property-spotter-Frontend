@@ -228,6 +228,21 @@ const ManageListings = () => {
                                                                         )
                                                                     }
                                                                 >
+                                                                    New
+                                                                </button>
+                                                            </li>
+                                                            <li>
+                                                                <button
+                                                                    className="hover:bg-primary hover:text-white"
+                                                                    onClick={(
+                                                                        e
+                                                                    ) =>
+                                                                        houseUpdate(
+                                                                            e,
+                                                                            house
+                                                                        )
+                                                                    }
+                                                                >
                                                                     sold
                                                                 </button>
                                                             </li>
@@ -247,35 +262,35 @@ const ManageListings = () => {
                                                                 </button>
                                                             </li>
                                                             <li>
-                                                                    <button
-                                                                        className="hover:bg-primary hover:text-white"
-                                                                        onClick={(
-                                                                            e
-                                                                        ) =>
-                                                                            houseUpdate(
-                                                                                e,
-                                                                                house
-                                                                            )
-                                                                        }
-                                                                    >
-                                                                        Unsuccessful
-                                                                    </button>
-                                                                </li>
-                                                                <li>
-                                                                    <button
-                                                                        className="hover:bg-primary hover:text-white"
-                                                                        onClick={(
-                                                                            e
-                                                                        ) =>
-                                                                            houseUpdate(
-                                                                                e,
-                                                                                house
-                                                                            )
-                                                                        }
-                                                                    >
-                                                                        Sold, Spotter paid
-                                                                    </button>
-                                                                </li>
+                                                                <button
+                                                                    className="hover:bg-primary hover:text-white"
+                                                                    onClick={(
+                                                                        e
+                                                                    ) =>
+                                                                        houseUpdate(
+                                                                            e,
+                                                                            house
+                                                                        )
+                                                                    }
+                                                                >
+                                                                    Unsuccessful
+                                                                </button>
+                                                            </li>
+                                                            <li>
+                                                                <button
+                                                                    className="hover:bg-primary hover:text-white"
+                                                                    onClick={(
+                                                                        e
+                                                                    ) =>
+                                                                        houseUpdate(
+                                                                            e,
+                                                                            house
+                                                                        )
+                                                                    }
+                                                                >
+                                                                    Sold, Spotter paid
+                                                                </button>
+                                                            </li>
                                                             <li>
                                                                 <button
                                                                     className="hover:bg-primary hover:text-white"
@@ -459,11 +474,10 @@ const ManageListings = () => {
                             <button
                                 key={i}
                                 onClick={() => paginate(i + 1)}
-                                className={`join-item btn btn-outline btn-primary  text-white mr-2 ${
-                                    currentPage === i + 1
+                                className={`join-item btn btn-outline btn-primary  text-white mr-2 ${currentPage === i + 1
                                         ? "bg-primary border-2 border-black text-white"
                                         : ""
-                                }`}
+                                    }`}
                             >
                                 <span className="text-white">{i + 1}</span>
                             </button>
