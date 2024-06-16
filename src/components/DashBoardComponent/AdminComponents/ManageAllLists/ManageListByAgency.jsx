@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { toast } from "react-toastify";
 import { AuthContext } from "../../../../Provider/AuthProvider";
 const stringToColor = (str) => {
@@ -27,6 +27,8 @@ const ManageListByAgency = () => {
     const [selectedAgency, setSelectedAgency] = useState(false);
     const [allAgent, setAllAgent] = useState([]);
     const [filterValue, setFilterValue] = useState("");
+    const [searchName, setSearchName] = useState("");
+    const searchRef = useRef(null);
 
     const fetchAgency = async () => {
         try {
@@ -216,7 +218,29 @@ const ManageListByAgency = () => {
                     </h4>
                 </div>
             </div>
-            <div className="flex justify-end">
+            <div className="flex justify-between">
+                <div className="flex items-center justify-center gap-2 py-2">
+                    <input
+                        type="search"
+                        name="searchName"
+                        id="searchName"
+                        ref={searchRef}
+                        placeholder="Search By Listing ID"
+                        onChange={(e) => setSearchName(e.target.value)}
+                        className="bg-blue-50 rounded-md border border-blue-200 outline-none px-2 py-1"
+                    />
+                    <button
+                        onClick={() => {
+                            setSearchName("");
+                            if (searchRef.current) {
+                                searchRef.current.value = "";
+                            }
+                        }}
+                        className="btn-sm btn-primary text-white rounded-md active:scale-95"
+                    >
+                        Clear
+                    </button>
+                </div>
                 <div className="flex items-center justify-center gap-2 py-2">
                     <h3>Filter By: </h3>
                     <select
@@ -275,11 +299,18 @@ const ManageListByAgency = () => {
                                 .filter((item) =>
                                     item.agency.some((name) => name !== "admin")
                                 )
-                                .filter((house) =>
-                                    filterValue
-                                        ? house.status === filterValue
-                                        : house
-                                )
+                                .filter((house) => {
+                                    if (filterValue) {
+                                        return house.status === filterValue;
+                                    }
+
+                                    if (searchName) {
+                                        console.log("NUM", house.random_id)
+                                        console.log("FFFF", parseInt(searchName))
+                                        return house.random_id === parseInt(searchName, 10);
+                                    }
+                                    return true;
+                                })
                                 .map((house, index) => (
                                     <tr key={house?._id}>
                                         <td>{house?.random_id}</td>
@@ -764,8 +795,8 @@ const ManageListByAgency = () => {
                                 key={i}
                                 onClick={() => paginate(i + 1)}
                                 className={`join-item btn btn-outline btn-primary  text-white mr-2 ${currentPage === i + 1
-                                        ? "bg-primary border-2 border-black text-white"
-                                        : ""
+                                    ? "bg-primary border-2 border-black text-white"
+                                    : ""
                                     }`}
                             >
                                 <span className="text-white">{i + 1}</span>
