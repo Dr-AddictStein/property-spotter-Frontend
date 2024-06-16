@@ -38,21 +38,35 @@ const Navbar = () => {
               </Link>
 
             </div>
-            <div className="w-full flex justify-end">
-            <div className="md:hidden flex items-center gap-2">
-              <div className="">
-                <Link to={"/signup"}>
-                  <button className="inline-flex justify-center items-center bg-primary text-white text-sm font-medium rounded-md gap-2 px-3.5 h-12">
-                    <GrUserManager size={18} />
-                    Become A Spotter
-                  </button>
-                </Link>
+            <div className="w-full flex justify-end sm:hidden">
+              <div className="md:hidden flex items-center gap-2">
+                <div className="">
+                  <Link to={"/signup"}>
+                    <button className="inline-flex justify-center items-center bg-primary text-white text-sm font-medium rounded-md gap-2 px-3.5 h-12">
+                      <GrUserManager size={18} />
+                      Become A Spotter
+                    </button>
+                  </Link>
+                </div>
+                <button onClick={() => setIsMenuOPen(!isMenuOpen)}>
+                  {!isMenuOpen ? <LuMenu size={20} /> : <LuX size={20} />}
+                </button>
               </div>
-              <button onClick={() => setIsMenuOPen(!isMenuOpen)}>
-                {!isMenuOpen ? <LuMenu size={20} /> : <LuX size={20} />}
-              </button>
             </div>
-
+            <div className="sm:block hidden">
+              <div className="md:hidden flex items-center gap-2">
+                <div className="">
+                  <Link to={"/signup"}>
+                    <button className="inline-flex justify-center items-center bg-primary text-white text-sm font-medium rounded-md gap-2 px-3.5 h-12">
+                      <GrUserManager size={18} />
+                      Become A Spotter
+                    </button>
+                  </Link>
+                </div>
+                <button onClick={() => setIsMenuOPen(!isMenuOpen)}>
+                  {!isMenuOpen ? <LuMenu size={20} /> : <LuX size={20} />}
+                </button>
+              </div>
             </div>
             <ul className="hidden md:flex flex-row gap-8 *:font-medium mr-auto px-10 *:text-sm ">
               <li>
