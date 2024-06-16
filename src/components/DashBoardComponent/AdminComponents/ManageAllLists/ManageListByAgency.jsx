@@ -58,12 +58,21 @@ const ManageListByAgency = () => {
             const response = await axios.get(
                 "http://localhost:5000/house/houseData"
             );
+            console.log("HOHOHO",response.data)
             setListingAgency(response.data);
-            setSelectedHouse(response.data.agency);
         } catch (error) {
             console.error("Error fetching data:", error);
         }
     };
+    
+    useEffect(()=>{
+        console.log("HHHHHHHH",selectedHouse)
+    },[selectedHouse])
+    
+    useEffect(()=>{
+        setSelectedHouse(listingAgency.agency);
+        console.log("HHHHHHHH",listingAgency.agency)
+    },[listingAgency])
 
     const getBadgeClass = (role) => {
         switch (role) {
@@ -100,6 +109,8 @@ const ManageListByAgency = () => {
     const indexOfLastFlat = currentPage * HousePerPage;
     const indexOfFirstFlat = indexOfLastFlat - HousePerPage;
     const currentJobs = listingAgency.slice(indexOfFirstFlat, indexOfLastFlat);
+
+    console.log("CUCUCU",currentJobs)
 
     // Change page
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
@@ -148,7 +159,7 @@ const ManageListByAgency = () => {
                     },
                     body: JSON.stringify({
                         agency: [selectedAgencies],
-                        agent: selectedAgent,
+                        agentName: selectedAgent,
                     }),
                 }
             );
@@ -171,7 +182,7 @@ const ManageListByAgency = () => {
                     },
                     body: JSON.stringify({
                         agency: ["admin"],
-                        agent: "",
+                        agentName: "",
                     }),
                 }
             );
@@ -253,6 +264,7 @@ const ManageListByAgency = () => {
                                 <th>Province</th>
                                 <th>Agency Name</th>
                                 <th>Agent Name</th>
+                                <th>Agent Cellphone</th>
                                 <th>Action</th>
                                 <th>Action</th>
                                 <th>Action</th>
@@ -288,7 +300,9 @@ const ManageListByAgency = () => {
                                         <td>{house.city}</td>
                                         <td>{house.province}</td>
                                         <td>{house.agency[0]}</td>
-                                        <td>{house.agent}</td>
+                                        <td>{house.agentName}</td>
+                                        <td>{house?.agentPhone}</td>
+                                        {/* <td>{house.agent.phone}</td> */}
                                         <td>
                                             <div className="flex gap-2">
                                                 <div>

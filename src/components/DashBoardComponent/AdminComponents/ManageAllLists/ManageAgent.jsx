@@ -94,6 +94,7 @@ const ManageAgent = () => {
     const formData = new FormData();
     formData.append("name", e.target.name.value);
     formData.append("email", e.target.email.value);
+    formData.append("phone", e.target.phone.value);
     formData.append("password", e.target.password.value);
     formData.append("role", "agent");
     formData.append("images", showName);
@@ -161,6 +162,7 @@ const ManageAgent = () => {
     const formData = new FormData();
     formData.append("name", e.target.name.value);
     formData.append("email", e.target.email.value);
+    formData.append("phone", e.target.phone.value);
     formData.append("password", e.target.password.value);
     formData.append("images", showName);
 
@@ -275,6 +277,17 @@ const ManageAgent = () => {
                   <div className="relative">
                     <input
                       type="text"
+                      name="phone"
+                      placeholder="Phone No."
+                      className="border border-black py-3 px-5 w-full"
+                    />
+                    <h1 className="absolute -top-2 left-4 px-1 bg-white text-sm">
+                      Phone No.
+                    </h1>
+                  </div>
+                  <div className="relative">
+                    <input
+                      type="password"
                       name="password"
                       placeholder="*********"
                       className="border border-black py-3 px-5 w-full"
@@ -385,6 +398,7 @@ const ManageAgent = () => {
                 <th>Agent</th>
                 <th>Name</th>
                 <th>Email</th>
+                <th>Cellphone Number</th>
                 <th>Agency Name</th>
                 <th>Action</th>
               </tr>
@@ -407,6 +421,7 @@ const ManageAgent = () => {
                   </td>
                   <td>{agent?.name}</td>
                   <td>{agent?.email}</td>
+                  <td>{agent?.phone}</td>
                   <td>{agent?.agencyName}</td>
                   <td>
                     <div className="flex items-center justify-center gap-3">
@@ -527,6 +542,18 @@ const ManageAgent = () => {
               <div className="relative">
                 <input
                   type="text"
+                  name="phone"
+                  placeholder="Phone No."
+                  defaultValue={editAgentData?.phone}
+                  className="border border-black py-3 px-5 w-full"
+                />
+                <h1 className="absolute -top-2 left-4 px-1 bg-white text-sm">
+                  Phone No.
+                </h1>
+              </div>
+              <div className="relative">
+                <input
+                  type="password"
                   name="password"
                   placeholder="*********"
                   className="border border-black py-3 px-5 w-full"

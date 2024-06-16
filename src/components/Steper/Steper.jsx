@@ -124,6 +124,7 @@ const Steper = () => {
                 formData.append("agency", [selectedAgencies]);
                 formData.append("agentName", selectedAgent?.name);
                 formData.append("agentEmail", selectedAgent?.email);
+                formData.append("agentPhone", selectedAgent?.phone);
             } else {
                 formData.append("agency", ["admin"]);
             }
