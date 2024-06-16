@@ -200,6 +200,9 @@ const SplashScreen = () => {
             <div className="">
                 <div className="lg:w-[600px] mx-auto shadow-xl rounded-xl bg-white px-16 py-10">
                     <>
+                    <div className=" text-2xl text-center font-bold mb-2">
+                        Fill out this form to become a Property Spotter
+                    </div>
                         <Form
                             form={form}
                             name="property_signup"
