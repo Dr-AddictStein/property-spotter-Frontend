@@ -253,7 +253,7 @@ const Steper = () => {
 
             {/* here contents */}
             <div className="p-6">
-                {activeStep === 1 && (
+                {activeStep === 2 && (
                     <div className="max-w-[400px] mx-auto py-20 space-y-5">
                         <div className="mt-4">
                             <div className="relative">
@@ -288,7 +288,7 @@ const Steper = () => {
                     </div>
                 )}
 
-                {activeStep === 2 && name && (
+                {activeStep === 1 && (
                     <div className="max-w-[600px] mx-auto py-10 space-y-5 flex flex-col justify-center items-center">
                         <div className="space-y-5">
                             <div>
