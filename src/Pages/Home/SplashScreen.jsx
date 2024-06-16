@@ -6,6 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { AuthContext } from "../../Provider/AuthProvider";
 import bgImage from "../../assets/images/Splash Screen.jpg";
+import logo from "../../assets/logo/logo.png";
 const { useForm } = Form;
 
 const SplashScreen = () => {
@@ -200,9 +201,12 @@ const SplashScreen = () => {
             <div className="">
                 <div className="lg:w-[600px] mx-auto shadow-xl rounded-xl bg-white px-16 py-10">
                     <>
-                    <div className=" text-2xl text-center font-bold mb-2">
-                        Fill out this form to become a Property Spotter
-                    </div>
+                        <div className=" flex justify-center items-center mb-10 sm:hidden">
+                            <img className="w-48" src={logo} alt="logo" />
+                        </div>
+                        <div className=" text-2xl text-center font-bold mb-2">
+                            Fill out this form to become a Property Spotter
+                        </div>
                         <Form
                             form={form}
                             name="property_signup"

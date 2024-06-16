@@ -26,16 +26,18 @@ const Navbar = () => {
   return (
     <>
       <header
-        className={`backdrop-blur-[8px] w-full top-0 ${
-          scrollY > 200 ? "sticky shadow-md animate" : ""
-        } transition-all duration-300 bg-white`}
+        className={`backdrop-blur-[8px] w-full top-0 ${scrollY > 200 ? "sticky shadow-md animate" : ""
+          } transition-all duration-300 bg-white`}
         style={{ zIndex: 9999 }}
       >
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center justify-between gap-5 py-3.5 px-6 lg:px-0">
-            <Link to={"/"} className="flex items-center">
-              <img className="w-28" src={logo} alt="logo"/>
-            </Link>
+            <div className="hidden sm:block">
+              <Link to={"/"} className="flex items-center">
+                <img className="w-40" src={logo} alt="logo" />
+              </Link>
+
+            </div>
             <div className="md:hidden flex items-center gap-2">
               <div className="">
                 <Link to={"/signup"}>
@@ -321,9 +323,8 @@ const Navbar = () => {
             </div>
           </div>
           <div
-            className={`${
-              isMenuOpen ? "" : "hidden"
-            } lg:hidden h-screen w-full`}
+            className={`${isMenuOpen ? "" : "hidden"
+              } lg:hidden h-screen w-full`}
           >
             <div className="flex justify-center items-center pb-10">
               <ul className="flex flex-col *:text-center gap-5 py-10 px-6 *:text-gray-800">
