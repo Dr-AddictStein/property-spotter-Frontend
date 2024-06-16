@@ -38,6 +38,7 @@ const Navbar = () => {
               </Link>
 
             </div>
+            <div className="w-full flex justify-end">
             <div className="md:hidden flex items-center gap-2">
               <div className="">
                 <Link to={"/signup"}>
@@ -50,6 +51,8 @@ const Navbar = () => {
               <button onClick={() => setIsMenuOPen(!isMenuOpen)}>
                 {!isMenuOpen ? <LuMenu size={20} /> : <LuX size={20} />}
               </button>
+            </div>
+
             </div>
             <ul className="hidden md:flex flex-row gap-8 *:font-medium mr-auto px-10 *:text-sm ">
               <li>
