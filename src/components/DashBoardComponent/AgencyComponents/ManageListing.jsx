@@ -158,6 +158,7 @@ const ManageListing = () => {
                         <thead>
                             <tr className="font-semibold text-base text-center">
                                 <th>Random Id</th>
+                                <th>Property24 Id</th>
                                 <th>Owner Name</th>
                                 <th>Owner Email</th>
                                 <th>Phone</th>
@@ -177,6 +178,7 @@ const ManageListing = () => {
                                 .map((house, index) => (
                                     <tr key={house?.jobData?._id}>
                                         <td>{house?.random_id}</td>
+                                        <td>{house?.p24_id}</td>
                                         <td>{house?.houseOwnerName}</td>
                                         <td>{house?.houseOwnerEmail}</td>
                                         <td>{house?.houseOwnerPhone}</td>

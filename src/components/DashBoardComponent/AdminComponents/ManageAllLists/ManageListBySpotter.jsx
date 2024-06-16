@@ -243,6 +243,7 @@ const ManageListBySpotter = () => {
                         <thead>
                             <tr className="font-semibold text-base text-center">
                                 <th>Random Id</th>
+                                <th>Property24 Id</th>
                                 <th>Spooter Name</th>
                                 <th>Spooter Email</th>
                                 <th>Owner Name</th>
@@ -273,6 +274,7 @@ const ManageListBySpotter = () => {
                                 .map((house, index) => (
                                     <tr key={house?._id}>
                                         <td>{house?.random_id}</td>
+                                        <td>{house?.p24_id}</td>
                                         <td>{house?.spooterName}</td>
                                         <td>{house?.spooterEmail}</td>
                                         <td>{house?.houseOwnerName}</td>
