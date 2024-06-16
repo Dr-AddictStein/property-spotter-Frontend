@@ -164,7 +164,7 @@ const ManageListings = () => {
                                 <th>Random Id</th>
                                 <th>Owner Name</th>
                                 <th>Owner Email</th>
-                                <th>House Phone</th>
+                                <th>Phone</th>
                                 <th>Status</th>
                                 <th>City</th>
                                 <th>Province</th>
