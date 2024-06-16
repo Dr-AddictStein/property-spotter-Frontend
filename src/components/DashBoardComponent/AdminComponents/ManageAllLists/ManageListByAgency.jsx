@@ -560,7 +560,7 @@ const ManageListByAgency = () => {
                                                                     </span>{" "}
                                                                     <span className="text-primary font-bold text-2xl">
                                                                         {
-                                                                            selectedHouse?.agent
+                                                                            selectedHouse?.agentName
                                                                         }
                                                                     </span>
                                                                 </h1>
@@ -570,7 +570,7 @@ const ManageListByAgency = () => {
                                                                     </span>{" "}
                                                                     <span className="text-primary font-bold text-2xl">
                                                                         {
-                                                                            selectedHouse?.address
+                                                                            selectedHouse?.address + ", " + selectedHouse?.city + ", " + selectedHouse?.suburb + ", " + selectedHouse?.province
                                                                         }
                                                                     </span>
                                                                 </h1>
