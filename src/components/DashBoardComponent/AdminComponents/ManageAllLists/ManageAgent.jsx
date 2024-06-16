@@ -61,7 +61,7 @@ const ManageAgent = () => {
 
   const getBadgeClass = (role) => {
     switch (role) {
-      case "approved":
+      case "sold":
         return "badge-accent";
       case "pending":
         return "badge-warning";

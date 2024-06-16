@@ -35,7 +35,7 @@ const PendingSpottedLIst = () => {
         switch (role) {
             case "new":
                 return "badge-accent";
-            case "approved":
+            case "sold":
                 return "badge-accent";
             case "pending":
                 return "badge-warning";
@@ -76,7 +76,7 @@ const PendingSpottedLIst = () => {
                         "Content-Type": "application/json",
                     },
                     body: JSON.stringify({
-                        status: "approved",
+                        status: "sold",
                         agency: [user.name],
                     }),
                 }

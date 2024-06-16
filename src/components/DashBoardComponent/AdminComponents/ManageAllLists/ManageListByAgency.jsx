@@ -58,27 +58,27 @@ const ManageListByAgency = () => {
             const response = await axios.get(
                 "http://localhost:5000/house/houseData"
             );
-            console.log("HOHOHO",response.data)
+            console.log("HOHOHO", response.data)
             setListingAgency(response.data);
         } catch (error) {
             console.error("Error fetching data:", error);
         }
     };
-    
-    useEffect(()=>{
-        console.log("HHHHHHHH",selectedHouse)
-    },[selectedHouse])
-    
-    useEffect(()=>{
+
+    useEffect(() => {
+        console.log("HHHHHHHH", selectedHouse)
+    }, [selectedHouse])
+
+    useEffect(() => {
         setSelectedHouse(listingAgency.agency);
-        console.log("HHHHHHHH",listingAgency.agency)
-    },[listingAgency])
+        console.log("HHHHHHHH", listingAgency.agency)
+    }, [listingAgency])
 
     const getBadgeClass = (role) => {
         switch (role) {
             case "new":
                 return "badge-accent";
-            case "approved":
+            case "sold":
                 return "badge-accent";
             case "pending":
                 return "badge-warning";
@@ -110,7 +110,7 @@ const ManageListByAgency = () => {
     const indexOfFirstFlat = indexOfLastFlat - HousePerPage;
     const currentJobs = listingAgency.slice(indexOfFirstFlat, indexOfLastFlat);
 
-    console.log("CUCUCU",currentJobs)
+    console.log("CUCUCU", currentJobs)
 
     // Change page
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
@@ -226,7 +226,7 @@ const ManageListByAgency = () => {
                         id=""
                     >
                         <option value="new">New</option>
-                        <option value="approved">Approved</option>
+                        <option value="sold">sold</option>
                         <option value="pending">Pending</option>
                         <option value="offer pending">Offer Pending</option>
                         <option value="pending mandate">Pending Mandate</option>
@@ -336,7 +336,22 @@ const ManageListByAgency = () => {
                                                                             )
                                                                         }
                                                                     >
-                                                                        Approved
+                                                                        New
+                                                                    </button>
+                                                                </li>
+                                                                <li>
+                                                                    <button
+                                                                        className="hover:bg-primary hover:text-white"
+                                                                        onClick={(
+                                                                            e
+                                                                        ) =>
+                                                                            houseUpdate(
+                                                                                e,
+                                                                                house
+                                                                            )
+                                                                        }
+                                                                    >
+                                                                        sold
                                                                     </button>
                                                                 </li>
                                                                 <li>
@@ -748,11 +763,10 @@ const ManageListByAgency = () => {
                             <button
                                 key={i}
                                 onClick={() => paginate(i + 1)}
-                                className={`join-item btn btn-outline btn-primary  text-white mr-2 ${
-                                    currentPage === i + 1
+                                className={`join-item btn btn-outline btn-primary  text-white mr-2 ${currentPage === i + 1
                                         ? "bg-primary border-2 border-black text-white"
                                         : ""
-                                }`}
+                                    }`}
                             >
                                 <span className="text-white">{i + 1}</span>
                             </button>

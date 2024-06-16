@@ -38,7 +38,7 @@ const ManageListing = () => {
         switch (role) {
             case "new":
                 return "badge-accent";
-            case "approved":
+            case "sold":
                 return "badge-accent";
             case "pending":
                 return "badge-warning";
@@ -129,7 +129,7 @@ const ManageListing = () => {
                         id=""
                     >
                         <option value="new">New</option>
-                        <option value="approved">Approved</option>
+                        <option value="sold">sold</option>
                         <option value="pending">Pending</option>
                         <option value="offer pending">Offer Pending</option>
                         <option value="pending mandate">Pending Mandate</option>
@@ -224,7 +224,7 @@ const ManageListing = () => {
                                                                         )
                                                                     }
                                                                 >
-                                                                    Approved
+                                                                    sold
                                                                 </button>
                                                             </li>
                                                             <li>

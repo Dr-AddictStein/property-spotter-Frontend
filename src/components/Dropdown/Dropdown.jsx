@@ -25,7 +25,7 @@ const Dropdown = ({houseUpdate}) => {
                     }`}
                 >
                     <button onClick={(e) => houseUpdate(e, house._id)}>
-                        Approved
+                        sold
                     </button>
                     <button onClick={(e) => houseUpdate(e, house._id)}>
                         Sold

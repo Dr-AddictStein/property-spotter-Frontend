@@ -37,7 +37,7 @@ const PendingSpottedLists = () => {
         switch (role) {
             case "new":
                 return "badge-accent";
-            case "approved":
+            case "sold":
                 return "badge-accent";
             case "pending":
                 return "badge-warning";
@@ -200,7 +200,7 @@ const PendingSpottedLists = () => {
                                                                         )
                                                                     }
                                                                 >
-                                                                    Approved
+                                                                    sold
                                                                 </button>
                                                             </li>
                                                             <li>

@@ -61,7 +61,7 @@ const ManageListByAdmin = () => {
         switch (role) {
             case "new":
                 return "badge-accent";
-            case "approved":
+            case "sold":
                 return "badge-accent";
             case "pending":
                 return "badge-warning";
@@ -181,7 +181,7 @@ const ManageListByAdmin = () => {
                             id=""
                         >
                             <option value="new">New</option>
-                            <option value="approved">Approved</option>
+                            <option value="sold">sold</option>
                             <option value="pending">Pending</option>
                             <option value="offer pending">Offer Pending</option>
                             <option value="pending mandate">
@@ -282,7 +282,22 @@ const ManageListByAdmin = () => {
                                                                             )
                                                                         }
                                                                     >
-                                                                        Approved
+                                                                        New
+                                                                    </button>
+                                                                </li>
+                                                                <li>
+                                                                    <button
+                                                                        className="hover:bg-primary hover:text-white"
+                                                                        onClick={(
+                                                                            e
+                                                                        ) =>
+                                                                            houseUpdate(
+                                                                                e,
+                                                                                house
+                                                                            )
+                                                                        }
+                                                                    >
+                                                                        sold
                                                                     </button>
                                                                 </li>
                                                                 <li>
