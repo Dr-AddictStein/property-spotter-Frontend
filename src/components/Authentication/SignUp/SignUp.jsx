@@ -55,7 +55,7 @@ const SignUp = () => {
           "content-type": "multipart/form-data",
         },
       };
-      const url = "http://localhost:5000/signup";
+      const url = "https://api.propertyspotter.co.za/signup";
 
       try {
         await axios.post(url, data, config);
@@ -113,7 +113,7 @@ const SignUp = () => {
           };
 
           axios
-            .post("http://localhost:5000/signup/google", userData, {
+            .post("https://api.propertyspotter.co.za/signup/google", userData, {
               headers: {
                 "Content-Type": "application/json",
               },
@@ -160,7 +160,7 @@ const SignUp = () => {
 
 
         axios
-          .post("http://localhost:5000/signup/google", saveUser, {
+          .post("https://api.propertyspotter.co.za/signup/google", saveUser, {
             headers: {
               "Content-Type": "application/json",
             },

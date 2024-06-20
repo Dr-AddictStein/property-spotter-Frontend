@@ -16,7 +16,7 @@ const ManageSpotters = () => {
     const { user } = useContext(AuthContext);
 
     const fetchAllSpotters = () => {
-        fetch("http://localhost:5000/spotters")
+        fetch("https://api.propertyspotter.co.za/spotters")
             .then((res) => res.json())
             .then((data) => setSpotters(data));
     };
@@ -31,7 +31,7 @@ const ManageSpotters = () => {
     const handleListModal = async (spotter) => {
         setListModal(true);
         const email = spotter?.email;
-        fetch(`http://localhost:5000/all-list/${email}`)
+        fetch(`https://api.propertyspotter.co.za/all-list/${email}`)
             .then((res) => res.json())
             .then((data) => setTableData(data));
     };
@@ -48,7 +48,7 @@ const ManageSpotters = () => {
         formData.append("password", e.target.password.value);
         formData.append("images", imagePath);
         const res = await fetch(
-            `http://localhost:5000/update/${spotterData.email}`,
+            `https://api.propertyspotter.co.za/update/${spotterData.email}`,
             {
                 method: "PUT",
                 body: formData,
@@ -66,7 +66,7 @@ const ManageSpotters = () => {
     const handlePayoutModal = (spotter) => {
         setPayoutModal(true);
         const email = spotter?.email;
-        fetch(`http://localhost:5000/all-list/${email}`)
+        fetch(`https://api.propertyspotter.co.za/all-list/${email}`)
             .then((res) => res.json())
             .then((data) => setPayoutModalData(data));
     };
@@ -99,7 +99,7 @@ const ManageSpotters = () => {
             });
 
             if (result.isConfirmed) {
-                await fetch(`http://localhost:5000/user/delete/${email}`, {
+                await fetch(`https://api.propertyspotter.co.za/user/delete/${email}`, {
                     method: "DELETE",
                 });
                 fetchAllSpotters();
@@ -129,7 +129,7 @@ const ManageSpotters = () => {
             status: "sold, spotter paid",
         };
 
-        await axios.post(`http://localhost:5000/house/update/${id}`, data);
+        await axios.post(`https://api.propertyspotter.co.za/house/update/${id}`, data);
         await handleListModal({ email: email });
         toast.success("Successfully updated");
     };

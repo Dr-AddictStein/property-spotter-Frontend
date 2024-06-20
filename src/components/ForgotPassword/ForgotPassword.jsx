@@ -10,7 +10,7 @@ const ForgotPassword = () => {
 
     try {
       const response = await axios.post(
-        `http://localhost:5000/forgot-password/${email}`
+        `https://api.propertyspotter.co.za/forgot-password/${email}`
       );
       if (response.data.Status === "Success") {
         toast.success("Password reset link sent successfully.");

@@ -17,7 +17,7 @@ const ManageArea = () => {
             formData.append("provinces", e.target.country.value);
 
             const response = await axios.post(
-                "http://localhost:5000/area/add-area",
+                "https://api.propertyspotter.co.za/area/add-area",
                 formData
             );
             if (response.data._id) {
@@ -37,7 +37,7 @@ const ManageArea = () => {
     const fetchArea = async () => {
         try {
             const response = await axios.get(
-                "http://localhost:5000/area/AreasData"
+                "https://api.propertyspotter.co.za/area/AreasData"
             );
             setArea(response.data);
         } catch (error) {
@@ -57,7 +57,7 @@ const ManageArea = () => {
         });
 
         if (result.isConfirmed) {
-            await axios.delete(`http://localhost:5000/area/delete/${id}`);
+            await axios.delete(`https://api.propertyspotter.co.za/area/delete/${id}`);
             toast.success("deleted");
             await fetchArea();
             Swal.fire({
@@ -254,7 +254,7 @@ const ManageArea = () => {
                         <div className="rounded-2xl h-44 object-center object-cover overflow-hidden">
                             <img
                                 className="rounded-2xl hover:scale-150 transition-transform duration-300"
-                                src={`http://localhost:5000/image/areas/${item.image}`}
+                                src={`https://api.propertyspotter.co.za/image/areas/${item.image}`}
                                 alt="area"
                             />
                         </div>

@@ -16,7 +16,7 @@ const ManageListings = () => {
     const fetchListingData = async () => {
         if (user) {
             try {
-                const url = `http://localhost:5000/house/houseDataByAgent/${user?.name}`;
+                const url = `https://api.propertyspotter.co.za/house/houseDataByAgent/${user?.name}`;
                 const response = await axios.get(url);
                 setListings(response.data);
             } catch (error) {
@@ -73,7 +73,7 @@ const ManageListings = () => {
         try {
             const value = e.target.innerText.toLowerCase();
             await fetch(
-                `http://localhost:5000/house/updateHouseDataByAgent/${house._id}`,
+                `https://api.propertyspotter.co.za/house/updateHouseDataByAgent/${house._id}`,
                 {
                     method: "POST",
                     headers: {

@@ -59,12 +59,12 @@ export const router = createBrowserRouter([
     
       {
         path: "/residential",
-        loader: () => fetch("http://localhost:5000/house/houseAvailableData"),
+        loader: () => fetch("https://api.propertyspotter.co.za/house/houseAvailableData"),
         element: <ResidentialPage />,
       },
       {
         path: "/commercial",
-        loader: () => fetch("http://localhost:5000/house/houseAvailableData"),
+        loader: () => fetch("https://api.propertyspotter.co.za/house/houseAvailableData"),
         element: <CommercialPage />,
       },
       {
@@ -93,7 +93,7 @@ export const router = createBrowserRouter([
       },
       {
         path: '/property-details/:id',
-        loader: ({ params }) => fetch(`http://localhost:5000/house/single-house-data/${params.id}`),
+        loader: ({ params }) => fetch(`https://api.propertyspotter.co.za/house/single-house-data/${params.id}`),
         element: <PropertyDetails />
       },
       {

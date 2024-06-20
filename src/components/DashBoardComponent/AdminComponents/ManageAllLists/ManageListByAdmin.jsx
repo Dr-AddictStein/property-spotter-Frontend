@@ -21,7 +21,7 @@ const ManageListByAdmin = () => {
     const fetchAgency = async () => {
         try {
             const response = await axios.get(
-                "http://localhost:5000/allusers/filterby/agency"
+                "https://api.propertyspotter.co.za/allusers/filterby/agency"
             );
             setAllAgency(response.data);
         } catch (error) {
@@ -31,7 +31,7 @@ const ManageListByAdmin = () => {
     const fetchAgent = async (name) => {
         try {
             const response = await axios.get(
-                `http://localhost:5000/all-agents/${name}`
+                `https://api.propertyspotter.co.za/all-agents/${name}`
             );
             return setAllAgent(response.data);
         } catch (error) {
@@ -46,7 +46,7 @@ const ManageListByAdmin = () => {
     const fetchListingData = async () => {
         try {
             const response = await axios.get(
-                "http://localhost:5000/house/houseDataByAdmin"
+                "https://api.propertyspotter.co.za/house/houseDataByAdmin"
             );
             setListings(response.data);
         } catch (error) {
@@ -98,7 +98,7 @@ const ManageListByAdmin = () => {
         try {
             const value = e.target.innerText.toLowerCase();
             const res = await fetch(
-                `http://localhost:5000/house/update/${house._id}`,
+                `https://api.propertyspotter.co.za/house/update/${house._id}`,
                 {
                     method: "POST",
                     headers: {
@@ -129,7 +129,7 @@ const ManageListByAdmin = () => {
     const handleSubmit = async (id) => {
         try {
             const res = await fetch(
-                `http://localhost:5000/house/update/${id}`,
+                `https://api.propertyspotter.co.za/house/update/${id}`,
                 {
                     method: "POST",
                     headers: {
@@ -156,7 +156,7 @@ const ManageListByAdmin = () => {
         // console.log("GUCK");
         try {
             const res = await fetch(
-                `http://localhost:5000/house/update/${id}`,
+                `https://api.propertyspotter.co.za/house/update/${id}`,
                 {
                     method: "POST",
                     headers: {

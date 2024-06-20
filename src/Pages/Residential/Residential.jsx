@@ -45,7 +45,7 @@ const ResidentialPage = () => {
     const fetchProvinces = async () => {
         try {
             const response = await axios.get(
-                "http://localhost:5000/area/AreasData"
+                "https://api.propertyspotter.co.za/area/AreasData"
             );
             setProvinces(response.data);
         } catch (error) {

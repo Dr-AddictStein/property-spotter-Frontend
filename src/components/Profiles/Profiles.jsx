@@ -33,7 +33,7 @@ const Profiles = () => {
           "content-type": "multipart/form-data",
         },
       };
-      const url = `http://localhost:5000/update/${user?.email}`;
+      const url = `https://api.propertyspotter.co.za/update/${user?.email}`;
       try {
         const response = await axios.put(url, data, config);
 
@@ -61,7 +61,7 @@ const Profiles = () => {
 
   const handleDeleteAccount = () => {
     axios
-      .delete(`http://localhost:5000/user/delete/${user?.email}`)
+      .delete(`https://api.propertyspotter.co.za/user/delete/${user?.email}`)
       .then((response) => {
         const { data } = response;
         if (data.message) {

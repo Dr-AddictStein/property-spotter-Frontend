@@ -14,7 +14,7 @@ const OtpUI = () => {
     const otp = parseInt(form.otp.value);
     
     axios
-      .post("http://localhost:5000/otp-verification", { otp })
+      .post("https://api.propertyspotter.co.za/otp-verification", { otp })
       .then((data) => {
         if (data?.data?.success) {
           toast.success("Successfully verify email.Please Login Now!");

@@ -33,7 +33,7 @@ const ManageListByAgency = () => {
     const fetchAgency = async () => {
         try {
             const response = await axios.get(
-                "http://localhost:5000/allusers/filterby/agency"
+                "https://api.propertyspotter.co.za/allusers/filterby/agency"
             );
             setAllAgency(response.data);
         } catch (error) {
@@ -43,7 +43,7 @@ const ManageListByAgency = () => {
     const fetchAgent = async (name) => {
         try {
             const response = await axios.get(
-                `http://localhost:5000/all-agents/${name}`
+                `https://api.propertyspotter.co.za/all-agents/${name}`
             );
             return setAllAgent(response.data);
         } catch (error) {
@@ -58,7 +58,7 @@ const ManageListByAgency = () => {
     const fetchListingAgency = async () => {
         try {
             const response = await axios.get(
-                "http://localhost:5000/house/houseData"
+                "https://api.propertyspotter.co.za/house/houseData"
             );
             console.log("HOHOHO", response.data)
             setListingAgency(response.data);
@@ -122,7 +122,7 @@ const ManageListByAgency = () => {
             const value = e.target.innerText.toLowerCase();
 
             await fetch(
-                `http://localhost:5000/house/updateHouseDataByAgent/${house._id}`,
+                `https://api.propertyspotter.co.za/house/updateHouseDataByAgent/${house._id}`,
                 {
                     method: "POST",
                     headers: {
@@ -153,7 +153,7 @@ const ManageListByAgency = () => {
     const handleSubmit = async (id) => {
         try {
             const res = await fetch(
-                `http://localhost:5000/house/update/${id}`,
+                `https://api.propertyspotter.co.za/house/update/${id}`,
                 {
                     method: "POST",
                     headers: {
@@ -176,7 +176,7 @@ const ManageListByAgency = () => {
     const handleUnassigned = async (id) => {
         try {
             const res = await fetch(
-                `http://localhost:5000/house/update/${id}`,
+                `https://api.propertyspotter.co.za/house/update/${id}`,
                 {
                     method: "POST",
                     headers: {

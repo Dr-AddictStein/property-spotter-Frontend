@@ -45,7 +45,7 @@ const UnsuccessfulListings = () => {
     const fetchData = async () => {
         if (user?.email) {
             const res = await fetch(
-                `http://localhost:5000/house/spotted-list-unsuccess/${user.email}`
+                `https://api.propertyspotter.co.za/house/spotted-list-unsuccess/${user.email}`
             );
             const data = await res.json();
             setSpottedList(data);

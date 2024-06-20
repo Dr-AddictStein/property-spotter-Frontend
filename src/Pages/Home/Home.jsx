@@ -18,7 +18,7 @@ const Home = () => {
 
     const fetchData = async () => {
         const res = await fetch(
-            "http://localhost:5000/house/houseAvailableData"
+            "https://api.propertyspotter.co.za/house/houseAvailableData"
         );
         const data = await res.json();
         setMainData(data);

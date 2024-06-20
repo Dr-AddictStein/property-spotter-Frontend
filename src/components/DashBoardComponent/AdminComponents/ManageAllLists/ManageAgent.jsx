@@ -29,7 +29,7 @@ const ManageAgent = () => {
   const fetchAgent = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5000/allusers/filterby/agency"
+        "https://api.propertyspotter.co.za/allusers/filterby/agency"
       );
       setAllAgency(response.data);
     } catch (error) {
@@ -40,7 +40,7 @@ const ManageAgent = () => {
   const fetchAgentData = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/allusers/filterby/agent`
+        `https://api.propertyspotter.co.za/allusers/filterby/agent`
       );
 
       setListings(response.data);
@@ -101,7 +101,7 @@ const ManageAgent = () => {
     formData.append("agencyName", selectedOrganization);
 
     try {
-      const res = await fetch("http://localhost:5000/signup", {
+      const res = await fetch("https://api.propertyspotter.co.za/signup", {
         method: "POST",
         body: formData,
       });
@@ -128,7 +128,7 @@ const ManageAgent = () => {
       });
 
       if (result.isConfirmed) {
-        await fetch(`http://localhost:5000/user/delete/${email}`, {
+        await fetch(`https://api.propertyspotter.co.za/user/delete/${email}`, {
           method: "DELETE",
         });
         fetchAgentData();
@@ -168,7 +168,7 @@ const ManageAgent = () => {
 
     try {
       const res = await fetch(
-        `http://localhost:5000/update/${editAgentData.email}`,
+        `https://api.propertyspotter.co.za/update/${editAgentData.email}`,
         {
           method: "PUT",
           body: formData,

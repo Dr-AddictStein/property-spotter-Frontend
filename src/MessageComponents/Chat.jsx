@@ -15,12 +15,12 @@ const Chat = () => {
 
 
     const getUsers = async () => {
-        const res = await axios.get('http://localhost:5000/allusers');
+        const res = await axios.get('https://api.propertyspotter.co.za/allusers');
         setUsers(res.data);
     }
 
     useEffect(() => {
-        socket.current = io('ws://localhost:8000');
+        socket.current = io('ws://socket.propertyspotter.co.za');
     }, [])
 
     // socket e data pathabo

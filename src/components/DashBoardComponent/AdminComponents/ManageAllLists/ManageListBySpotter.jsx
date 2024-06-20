@@ -22,7 +22,7 @@ const ManageListBySpotter = () => {
     const fetchAgency = async () => {
         try {
             const response = await axios.get(
-                "http://localhost:5000/allusers/filterby/agency"
+                "https://api.propertyspotter.co.za/allusers/filterby/agency"
             );
             setAllAgency(response.data);
         } catch (error) {
@@ -32,7 +32,7 @@ const ManageListBySpotter = () => {
     const fetchAgent = async (name) => {
         try {
             const response = await axios.get(
-                `http://localhost:5000/all-agents/${name}`
+                `https://api.propertyspotter.co.za/all-agents/${name}`
             );
             return setAllAgent(response.data);
         } catch (error) {
@@ -48,7 +48,7 @@ const ManageListBySpotter = () => {
     const fetchListingData = async () => {
         try {
             const response = await axios.get(
-                "http://localhost:5000/house/houseData"
+                "https://api.propertyspotter.co.za/house/houseData"
             );
             setListings(response.data);
         } catch (error) {
@@ -102,7 +102,7 @@ const ManageListBySpotter = () => {
             console.log('hit this route bro', house);
             const value = e.target.innerText.toLowerCase();
             await fetch(
-                `http://localhost:5000/house/updateHouseDataByAgent/${house._id}`,
+                `https://api.propertyspotter.co.za/house/updateHouseDataByAgent/${house._id}`,
                 {
                     method: "POST",
                     headers: {
@@ -136,7 +136,7 @@ const ManageListBySpotter = () => {
     const handleSubmit = async (id) => {
         try {
             const res = await fetch(
-                `http://localhost:5000/house/update/${id}`,
+                `https://api.propertyspotter.co.za/house/update/${id}`,
                 {
                     method: "POST",
                     headers: {

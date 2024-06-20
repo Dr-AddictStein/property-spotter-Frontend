@@ -24,7 +24,7 @@ const AuthProvider = ({ children }) => {
   const login = async (email, password) => {
     console.log("🚀 ~ login ~ email, password:", email, password);
     try {
-      const response = await axios.post("http://localhost:5000/login", {
+      const response = await axios.post("https://api.propertyspotter.co.za/login", {
         email,
         password,
       });
@@ -61,7 +61,7 @@ const AuthProvider = ({ children }) => {
       const token = localStorage.getItem("access-token");
       if (token) {
         setLoading(true);
-        const response = await axios.get("http://localhost:5000/verifyToken", {
+        const response = await axios.get("https://api.propertyspotter.co.za/verifyToken", {
           headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${token}`,

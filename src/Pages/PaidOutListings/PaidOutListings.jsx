@@ -45,7 +45,7 @@ const PaidOutListings = () => {
     const fetchData = async () => {
         if (user?.email) {
             const res = await fetch(
-                `http://localhost:5000/house/spotted-list-paid/${user.email}`
+                `https://api.propertyspotter.co.za/house/spotted-list-paid/${user.email}`
             );
             const data = await res.json();
 

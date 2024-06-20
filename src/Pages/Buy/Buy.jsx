@@ -27,7 +27,7 @@ const BuyPage = () => {
     const fetchArea = async () => {
         try {
             const response = await axios.get(
-                "http://localhost:5000/house/houseAvailableData"
+                "https://api.propertyspotter.co.za/house/houseAvailableData"
             );
             setArea(response.data);
         } catch (error) {
@@ -62,7 +62,7 @@ const BuyPage = () => {
     const fetchProvinces = async () => {
         try {
             const response = await axios.get(
-                "http://localhost:5000/area/AreasData"
+                "https://api.propertyspotter.co.za/area/AreasData"
             );
             setProvinces(response.data);
         } catch (error) {

@@ -16,7 +16,7 @@ const Places = () => {
 
   const fetchArea = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/area/AreasData");
+      const response = await axios.get("https://api.propertyspotter.co.za/area/AreasData");
       setArea(response.data);
     } catch (error) {
       console.error( error);

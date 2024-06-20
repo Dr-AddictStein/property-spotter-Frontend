@@ -41,7 +41,7 @@ const Login = () => {
                     };
 
                     axios
-                        .post("http://localhost:5000/signup/google", userData, {
+                        .post("https://api.propertyspotter.co.za/signup/google", userData, {
                             headers: {
                                 "Content-Type": "application/json",
                             },
@@ -88,7 +88,7 @@ const Login = () => {
                 };
 
                 axios
-                    .post("http://localhost:5000/signup/google", saveUser, {
+                    .post("https://api.propertyspotter.co.za/signup/google", saveUser, {
                         headers: {
                             "Content-Type": "application/json",
                         },

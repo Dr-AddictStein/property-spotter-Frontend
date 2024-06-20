@@ -13,7 +13,7 @@ const ResetPassword = () => {
     const password = form.password.value;
 
     try {
-      const response = await axios.post(`http://localhost:5000/reset-password/${id}/${token}`, {
+      const response = await axios.post(`https://api.propertyspotter.co.za/reset-password/${id}/${token}`, {
         password: password,
       });
       if (response.data.Status === "Success") {

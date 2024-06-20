@@ -28,7 +28,7 @@ const ManageAgency = () => {
             formData.append("images", showName);
 
             const response = await axios.post(
-                "http://localhost:5000/agency/add-agency",
+                "https://api.propertyspotter.co.za/agency/add-agency",
                 formData
             );
             if (response.status === 201) {
@@ -61,7 +61,7 @@ const ManageAgency = () => {
     const fetchAgency = async () => {
         try {
             const response = await axios.get(
-                "http://localhost:5000/allusers/filterby/agency"
+                "https://api.propertyspotter.co.za/allusers/filterby/agency"
             );
             setAgencyData(response.data);
         } catch (error) {
@@ -82,7 +82,7 @@ const ManageAgency = () => {
             });
             if (swalConfirm.isConfirmed) {
                 await axios.delete(
-                    `http://localhost:5000/admin/delete/${email}`
+                    `https://api.propertyspotter.co.za/admin/delete/${email}`
                 );
                 toast.success("Agency Deleted");
                 fetchAgency();
@@ -124,7 +124,7 @@ const ManageAgency = () => {
             },
         };
         const id = updateAgency?._id;
-        const url = `http://localhost:5000/admin/Update/${id}`;
+        const url = `https://api.propertyspotter.co.za/admin/Update/${id}`;
 
         try {
             const response = await axios.put(url, data, config);
@@ -158,7 +158,7 @@ const ManageAgency = () => {
     const handleViewAgent = async (name) => {
         setViewAgentModal(true);
         const response = await axios.get(
-            `http://localhost:5000/allusers/filterby/agent/${name}`
+            `https://api.propertyspotter.co.za/allusers/filterby/agent/${name}`
         );
         setAgentModalData(response.data);
     };

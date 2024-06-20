@@ -45,7 +45,7 @@ const ManageSpottedListings = () => {
     const fetchData = async () => {
         if (user?.email) {
             const res = await fetch(
-                `http://localhost:5000/house/spotted-list/${user.email}`
+                `https://api.propertyspotter.co.za/house/spotted-list/${user.email}`
             );
             const data = await res.json();
             setSpottedList(data);

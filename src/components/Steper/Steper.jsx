@@ -43,7 +43,7 @@ const Steper = () => {
     const fetchAgency = async () => {
         try {
             const response = await axios.get(
-                "http://localhost:5000/all-agency"
+                "https://api.propertyspotter.co.za/all-agency"
             );
             setAllAgency(response.data);
         } catch (error) {
@@ -54,7 +54,7 @@ const Steper = () => {
     const fetchAgent = async (name) => {
         try {
             const response = await axios.get(
-                `http://localhost:5000/all-agents/${name}`
+                `https://api.propertyspotter.co.za/all-agents/${name}`
             );
             return setAllAgent(response.data);
         } catch (error) {
@@ -64,7 +64,7 @@ const Steper = () => {
     const fetchProvinces = async () => {
         try {
             const response = await axios.get(
-                "http://localhost:5000/area/AreasData"
+                "https://api.propertyspotter.co.za/area/AreasData"
             );
             setProvinces(response.data);
         } catch (error) {
@@ -131,7 +131,7 @@ const Steper = () => {
 
             try {
                 const res = await axios.post(
-                    "http://localhost:5000/house/add",
+                    "https://api.propertyspotter.co.za/house/add",
                     formData,
                     {
                         headers: {
@@ -150,7 +150,7 @@ const Steper = () => {
     };
 
     useEffect(() => {
-        fetch("http://localhost:5000/agency/agencyData")
+        fetch("https://api.propertyspotter.co.za/agency/agencyData")
             .then((res) => res.json())
             .then((data) =>
                 setAgencyList(

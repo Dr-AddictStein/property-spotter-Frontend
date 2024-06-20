@@ -25,7 +25,7 @@ const Message = ({ currentUser, reciever, socket, onlineUsers }) => {
 
     const fetchData = async () => {
         try {
-            const res = await axios.get(`http://localhost:5000/message/get-message/${reciever._id}/${currentUser?._id}`);
+            const res = await axios.get(`https://api.propertyspotter.co.za/message/get-message/${reciever._id}/${currentUser?._id}`);
             setMessages(res.data);
             setHasMessages(res.data.length > 0);
         } catch (error) {
@@ -62,7 +62,7 @@ const Message = ({ currentUser, reciever, socket, onlineUsers }) => {
                 },
                 time: new Date(),
             })
-            await axios.post('http://localhost:5000/message/send-message', {
+            await axios.post('https://api.propertyspotter.co.za/message/send-message', {
                 senderId: currentUser._id,
                 recieverId: reciever._id,
                 text: {

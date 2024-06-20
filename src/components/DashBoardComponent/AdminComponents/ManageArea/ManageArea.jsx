@@ -11,7 +11,7 @@ const ManageArea = () => {
     const { user } = useContext(AuthContext);
 
     const fetchProvinces = () => {
-        fetch("http://localhost:5000/area/AreasData")
+        fetch("https://api.propertyspotter.co.za/area/AreasData")
             .then((res) => res.json())
             .then((data) => setProvinces(data));
     };
@@ -24,7 +24,7 @@ const ManageArea = () => {
         const provinces = e.target.provinces.value;
 
         const response = await axios.post(
-            "http://localhost:5000/area/add-area",
+            "https://api.propertyspotter.co.za/area/add-area",
             { provinces }
         );
         e.target.reset();
@@ -41,7 +41,7 @@ const ManageArea = () => {
         const provinces = e.target.province.value;
         const city = e.target.city.value;
 
-        await axios.post("http://localhost:5000/area/add-city", {
+        await axios.post("https://api.propertyspotter.co.za/area/add-city", {
             provinces,
             city,
         });
@@ -63,7 +63,7 @@ const ManageArea = () => {
 
         if (result.isConfirmed) {
             await axios.delete(
-                `http://localhost:5000/area/delete-city/${id}?city=${city}`
+                `https://api.propertyspotter.co.za/area/delete-city/${id}?city=${city}`
             );
             toast.success("Successfully deleted");
             await fetchProvinces();
@@ -85,7 +85,7 @@ const ManageArea = () => {
 
         if (result.isConfirmed) {
             await axios.delete(
-                `http://localhost:5000/area/delete-province/${id}`
+                `https://api.propertyspotter.co.za/area/delete-province/${id}`
             );
             toast.success("Successfully deleted");
             await fetchProvinces();

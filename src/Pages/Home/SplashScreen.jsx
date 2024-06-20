@@ -41,7 +41,7 @@ const SplashScreen = () => {
                     "content-type": "multipart/form-data",
                 },
             };
-            const url = "http://localhost:5000/signup/spotter";
+            const url = "https://api.propertyspotter.co.za/signup/spotter";
             try {
                 await axios.post(url, data, config);
                 message.success("Spooter Registration Successfull!");
@@ -98,7 +98,7 @@ const SplashScreen = () => {
                     };
 
                     axios
-                        .post("http://localhost:5000/signup/google", userData, {
+                        .post("https://api.propertyspotter.co.za/signup/google", userData, {
                             headers: {
                                 "Content-Type": "application/json",
                             },
@@ -145,7 +145,7 @@ const SplashScreen = () => {
                 };
 
                 axios
-                    .post("http://localhost:5000/signup/google", saveUser, {
+                    .post("https://api.propertyspotter.co.za/signup/google", saveUser, {
                         headers: {
                             "Content-Type": "application/json",
                         },
@@ -178,7 +178,7 @@ const SplashScreen = () => {
             password: e.target.password.value,
         };
         const res = await axios.post(
-            "http://localhost:5000/spotter/registration",
+            "https://api.propertyspotter.co.za/spotter/registration",
             spooterData
         );
         if (res.data._id) {

@@ -22,7 +22,7 @@ const ManageListsByAgent = () => {
     const fetchAgentData = async () => {
         try {
             const response = await axios.get(
-                `http://localhost:5000/allusers/filterby/agent/${user?.name}`
+                `https://api.propertyspotter.co.za/allusers/filterby/agent/${user?.name}`
             );
 
             setListings(response.data);
@@ -85,7 +85,7 @@ const ManageListsByAgent = () => {
         formData.append("agencyName", user?.name);
         
         try {
-            const res = await fetch("http://localhost:5000/signup", {
+            const res = await fetch("https://api.propertyspotter.co.za/signup", {
                 method: "POST",
                 body: formData,
             });
@@ -112,7 +112,7 @@ const ManageListsByAgent = () => {
             });
 
             if (result.isConfirmed) {
-                await fetch(`http://localhost:5000/user/delete/${email}`, {
+                await fetch(`https://api.propertyspotter.co.za/user/delete/${email}`, {
                     method: "DELETE",
                 });
                 fetchAgentData();
@@ -151,7 +151,7 @@ const ManageListsByAgent = () => {
         formData.append("images", showName);
 
         try {
-            const res = await fetch(`http://localhost:5000/update/${editAgentData.email}`, {
+            const res = await fetch(`https://api.propertyspotter.co.za/update/${editAgentData.email}`, {
                 method: "PUT",
                 body: formData,
             });
