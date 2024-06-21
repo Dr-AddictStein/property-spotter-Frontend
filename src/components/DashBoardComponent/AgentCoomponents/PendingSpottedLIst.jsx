@@ -14,7 +14,7 @@ const PendingSpottedLIst = () => {
     const fetchListingData = async () => {
         try {
             const response = await axios.get(
-                `http://localhost:5000/house/houseDataByAgent/${user?.name}`
+                `https://api.propertyspotter.co.za/house/houseDataByAgent/${user?.name}`
             );
             setListings(response.data);
         } catch (error) {
@@ -69,7 +69,7 @@ const PendingSpottedLIst = () => {
     const houseUpdate = async (id) => {
         try {
             const res = await fetch(
-                `http://localhost:5000/house/update/${id}`,
+                `https://api.propertyspotter.co.za/house/update/${id}`,
                 {
                     method: "POST",
                     headers: {
