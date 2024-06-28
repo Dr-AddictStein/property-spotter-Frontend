@@ -102,6 +102,7 @@ const Steper = () => {
             formData.append("status", "new");
 
             formData.append("address", street);
+            formData.append("p24_id", "PS" + Date.now().toString());
             formData.append("suburb", suburb);
             formData.append("city", city);
             formData.append("province", selectedProvinces);
