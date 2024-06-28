@@ -195,6 +195,33 @@ const ManageListByAgency = () => {
         }
     };
 
+    const addP24ID = async (e,id) => {
+        e.preventDefault();
+
+        // console.log("GUGUGU",e.target.p24id.value)
+        // console.log("ZZZZU",id)
+        // console.log("GUCK");
+        try {
+            const res = await fetch(
+                `https://api.propertyspotter.co.za/house/update/${id}`,
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        p24_id:e.target.p24id.value
+                    }),
+                }
+            );
+            toast.success(`Successfully Modified Property24 ID!`);
+            fetchListingData();
+            document.getElementById(`my_modal_f${id}`).close();
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
     return (
         <div className="p-6">
             <div className="grid lg:grid-cols-2 grid-cols-1 lg:gap-7">
@@ -315,7 +342,24 @@ const ManageListByAgency = () => {
                                 .map((house, index) => (
                                     <tr key={house?._id}>
                                         <td>{house?.random_id}</td>
-                                        <td>{house?.p24_id}</td>
+                                        <td className="flex gap-2">
+
+                                            <form onSubmit={(e)=>addP24ID(e,house?._id)} className="flex gap-2">
+                                                <input
+                                                    type="text"
+                                                    name="p24id"
+                                                    placeholder="Property24 ID"
+                                                    defaultValue={house?.p24_id}
+                                                    className="bg-blue-50 rounded-md border border-blue-200 outline-none px-2 py-1 text-base"
+                                                />
+                                                <button
+                                                    type="submit"
+                                                    className="btn-sm btn-primary text-white rounded-md active:scale-95"
+                                                >
+                                                    Change
+                                                </button>
+                                            </form>
+                                            </td>
                                         <td>{house?.spooterName}</td>
                                         <td>{house?.houseOwnerName}</td>
                                         <td>{house?.houseOwnerEmail}</td>
