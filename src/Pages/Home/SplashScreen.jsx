@@ -43,7 +43,8 @@ const SplashScreen = () => {
             };
             const url = "https://api.propertyspotter.co.za/signup/spotter";
             try {
-                await axios.post(url, data, config);
+                const res = await axios.post(url, data, config);
+                console.log("FUCKED",res);
                 message.success("Spooter Registration Successfull!");
                 form.resetFields();
                 navigate("/otp");
