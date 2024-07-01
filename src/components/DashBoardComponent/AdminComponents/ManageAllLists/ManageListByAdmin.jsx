@@ -131,6 +131,7 @@ const ManageListByAdmin = () => {
 
     const handleSubmit = async (house) => {
         try {
+            console.log("HOUSE:::::",house);
             const res = await fetch(
                 `https://api.propertyspotter.co.za/house/update/${house._id}`,
                 {
@@ -142,7 +143,7 @@ const ManageListByAdmin = () => {
                         agency: [selectedAgencies],
                         agentName: selectedAgent,
                         forStatus:false,
-                        house
+                        house:house
                     }),
                 }
             );
