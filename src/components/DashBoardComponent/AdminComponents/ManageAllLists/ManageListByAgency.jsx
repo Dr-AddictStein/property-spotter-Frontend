@@ -133,6 +133,7 @@ const ManageListByAgency = () => {
                         agencyName: house.agency[0],
                         // agencyEmail: user.email,
                         // agencyImage: user.photoURL,
+                        oldStatus:house.status
                     }),
                 }
             );
