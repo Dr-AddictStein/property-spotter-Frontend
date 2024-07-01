@@ -121,6 +121,7 @@ const ManageListByAgency = () => {
         try {
             const value = e.target.innerText.toLowerCase();
             console.log("APAPAPAPAPAP",house.status);
+            console.log("APAPAPAPAPAP zzzzzzzz",house.random_id);
 
             await fetch(
                 `https://api.propertyspotter.co.za/house/updateHouseDataByAgent/${house._id}`,
@@ -134,7 +135,8 @@ const ManageListByAgency = () => {
                         agencyName: house.agency[0],
                         // agencyEmail: user.email,
                         // agencyImage: user.photoURL,
-                        oldStatus:house.status
+                        oldStatus:house.status,
+                        random_id:house.random_id
                     }),
                 }
             );
