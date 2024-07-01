@@ -141,7 +141,8 @@ const ManageListByAdmin = () => {
                     body: JSON.stringify({
                         agency: [selectedAgencies],
                         agentName: selectedAgent,
-                        forStatus:false
+                        forStatus:false,
+                        house
                     }),
                 }
             );
