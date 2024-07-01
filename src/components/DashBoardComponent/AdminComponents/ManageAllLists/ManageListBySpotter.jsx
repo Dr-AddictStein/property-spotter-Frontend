@@ -115,7 +115,9 @@ const ManageListBySpotter = () => {
                         // agencyEmail: user.email,
                         // agencyImage: user.photoURL,
                         oldStatus:house.status,
-                        random_id:house.random_id
+                        random_id:house.random_id,
+                        forStatus:true,
+                        house:house
                     }),
                 }
             );
@@ -133,10 +135,10 @@ const ManageListBySpotter = () => {
         setSelectedAgency(true);
     };
 
-    const handleSubmit = async (id) => {
+    const handleSubmit = async (house) => {
         try {
             const res = await fetch(
-                `https://api.propertyspotter.co.za/house/update/${id}`,
+                `https://api.propertyspotter.co.za/house/update/${house._id}`,
                 {
                     method: "POST",
                     headers: {
@@ -145,6 +147,8 @@ const ManageListBySpotter = () => {
                     body: JSON.stringify({
                         agency: [selectedAgencies],
                         agent: selectedAgent,
+                        forStatus:false,
+                        house:house
                     }),
                 }
             );
@@ -740,7 +744,7 @@ const ManageListBySpotter = () => {
                                                             className="btn btn-accent"
                                                             onClick={(e) =>
                                                                 handleSubmit(
-                                                                    house._id
+                                                                    house
                                                                 )
                                                             }
                                                         >
