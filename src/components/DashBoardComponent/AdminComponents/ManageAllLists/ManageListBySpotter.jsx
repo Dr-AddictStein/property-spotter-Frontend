@@ -120,7 +120,7 @@ const ManageListBySpotter = () => {
                 }
             );
             toast.success(`Successfully ${value}`);
-            fetchListingAgency();
+            fetchListingData();
             document.getElementById(`my_modal_${house._id}`).close();
         } catch (error) {
             console.log(error);
