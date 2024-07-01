@@ -94,7 +94,7 @@ const ManageListByAdmin = () => {
     // Change page
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
-    const houseUpdate = async (e, house) => {
+    const houseUpdate = async (e, house, random_id, spooterEmail) => {
         try {
             const value = e.target.innerText.toLowerCase();
             const res = await fetch(
@@ -109,6 +109,8 @@ const ManageListByAdmin = () => {
                         agencyName: user.name,
                         agencyEmail: user.email,
                         agencyImage: user.photoURL,
+                        spooterEmail: spooterEmail,
+                        random_id:random_id
                     }),
                 }
             );
@@ -148,7 +150,7 @@ const ManageListByAdmin = () => {
             console.log(error);
         }
     };
-    const addP24ID = async (e,id) => {
+    const addP24ID = async (e, id) => {
         e.preventDefault();
 
         // console.log("GUGUGU",e.target.p24id.value)
@@ -163,7 +165,7 @@ const ManageListByAdmin = () => {
                         "Content-Type": "application/json",
                     },
                     body: JSON.stringify({
-                        p24_id:e.target.p24id.value
+                        p24_id: e.target.p24id.value
                     }),
                 }
             );
@@ -293,21 +295,21 @@ const ManageListByAdmin = () => {
                                             <td>{house?.random_id}</td>
                                             <td className="flex gap-2">
 
-                                            <form onSubmit={(e)=>addP24ID(e,house?._id)} className="flex gap-2">
-                                                <input
-                                                    type="text"
-                                                    name="p24id"
-                                                    placeholder="Property24 ID"
-                                                    defaultValue={house?.p24_id}
-                                                    className="bg-blue-50 rounded-md border border-blue-200 outline-none px-2 py-1 text-base"
-                                                />
-                                                <button
-                                                    type="submit"
-                                                    className="btn-sm btn-primary text-white rounded-md active:scale-95"
-                                                >
-                                                    Change
-                                                </button>
-                                            </form>
+                                                <form onSubmit={(e) => addP24ID(e, house?._id)} className="flex gap-2">
+                                                    <input
+                                                        type="text"
+                                                        name="p24id"
+                                                        placeholder="Property24 ID"
+                                                        defaultValue={house?.p24_id}
+                                                        className="bg-blue-50 rounded-md border border-blue-200 outline-none px-2 py-1 text-base"
+                                                    />
+                                                    <button
+                                                        type="submit"
+                                                        className="btn-sm btn-primary text-white rounded-md active:scale-95"
+                                                    >
+                                                        Change
+                                                    </button>
+                                                </form>
                                             </td>
                                             <td>{house?.spooterName}</td>
                                             <td>{house?.spooterEmail}</td>
@@ -354,7 +356,9 @@ const ManageListByAdmin = () => {
                                                                         ) =>
                                                                             houseUpdate(
                                                                                 e,
-                                                                                house
+                                                                                house,
+                                                                                house?.random_id,
+                                                                                house?.spooterEMail
                                                                             )
                                                                         }
                                                                     >
@@ -369,7 +373,9 @@ const ManageListByAdmin = () => {
                                                                         ) =>
                                                                             houseUpdate(
                                                                                 e,
-                                                                                house
+                                                                                house,
+                                                                                house?.random_id,
+                                                                                house?.spooterEMail
                                                                             )
                                                                         }
                                                                     >
@@ -384,7 +390,9 @@ const ManageListByAdmin = () => {
                                                                         ) =>
                                                                             houseUpdate(
                                                                                 e,
-                                                                                house
+                                                                                house,
+                                                                                house?.random_id,
+                                                                                house?.spooterEMail
                                                                             )
                                                                         }
                                                                     >
@@ -399,7 +407,9 @@ const ManageListByAdmin = () => {
                                                                         ) =>
                                                                             houseUpdate(
                                                                                 e,
-                                                                                house
+                                                                                house,
+                                                                                house?.random_id,
+                                                                                house?.spooterEMail
                                                                             )
                                                                         }
                                                                     >
@@ -414,7 +424,9 @@ const ManageListByAdmin = () => {
                                                                         ) =>
                                                                             houseUpdate(
                                                                                 e,
-                                                                                house
+                                                                                house,
+                                                                                house?.random_id,
+                                                                                house?.spooterEMail
                                                                             )
                                                                         }
                                                                     >
@@ -431,7 +443,9 @@ const ManageListByAdmin = () => {
                                                                         ) =>
                                                                             houseUpdate(
                                                                                 e,
-                                                                                house
+                                                                                house,
+                                                                                house?.random_id,
+                                                                                house?.spooterEMail
                                                                             )
                                                                         }
                                                                     >
@@ -446,7 +460,9 @@ const ManageListByAdmin = () => {
                                                                         ) =>
                                                                             houseUpdate(
                                                                                 e,
-                                                                                house
+                                                                                house,
+                                                                                house?.random_id,
+                                                                                house?.spooterEMail
                                                                             )
                                                                         }
                                                                     >
@@ -462,7 +478,9 @@ const ManageListByAdmin = () => {
                                                                         ) =>
                                                                             houseUpdate(
                                                                                 e,
-                                                                                house
+                                                                                house,
+                                                                                house?.random_id,
+                                                                                house?.spooterEMail
                                                                             )
                                                                         }
                                                                     >
@@ -477,7 +495,9 @@ const ManageListByAdmin = () => {
                                                                         ) =>
                                                                             houseUpdate(
                                                                                 e,
-                                                                                house
+                                                                                house,
+                                                                                house?.random_id,
+                                                                                house?.spooterEMail
                                                                             )
                                                                         }
                                                                     >
