@@ -129,10 +129,10 @@ const ManageListByAdmin = () => {
         setSelectedAgency(true);
     };
 
-    const handleSubmit = async (id) => {
+    const handleSubmit = async (house) => {
         try {
             const res = await fetch(
-                `https://api.propertyspotter.co.za/house/update/${id}`,
+                `https://api.propertyspotter.co.za/house/update/${house._id}`,
                 {
                     method: "POST",
                     headers: {
@@ -660,7 +660,7 @@ const ManageListByAdmin = () => {
                                                                         e
                                                                     ) =>
                                                                         handleSubmit(
-                                                                            house._id
+                                                                            house
                                                                         )
                                                                     }
                                                                 >
