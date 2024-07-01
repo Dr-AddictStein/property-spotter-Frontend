@@ -98,9 +98,10 @@ const ManageListBySpotter = () => {
 
     const houseUpdate = async (e, house) => {
         try {
-
-            console.log('hit this route bro', house);
             const value = e.target.innerText.toLowerCase();
+            console.log("APAPAPAPAPAP",house.status);
+            console.log("APAPAPAPAPAP zzzzzzzz",house.random_id);
+
             await fetch(
                 `https://api.propertyspotter.co.za/house/updateHouseDataByAgent/${house._id}`,
                 {
@@ -110,23 +111,22 @@ const ManageListBySpotter = () => {
                     },
                     body: JSON.stringify({
                         status: value,
-                        agencyName: house?.agency[0],
-                        agentEmail: house?.agentEmail,
-                        agentName: house?.agentName,
-                        spotterName: house?.spooterName,
-                        spotterEmail: house?.spooterEmail,
-                        random_id: house?.random_id,
-                        oldStatus: house?.status,
+                        agencyName: house.agency[0],
+                        // agencyEmail: user.email,
+                        // agencyImage: user.photoURL,
+                        oldStatus:house.status,
+                        random_id:house.random_id
                     }),
                 }
             );
             toast.success(`Successfully ${value}`);
-            fetchListingData();
+            fetchListingAgency();
             document.getElementById(`my_modal_${house._id}`).close();
         } catch (error) {
             console.log(error);
         }
     };
+
     const handleAgencySelect = async (e) => {
         setSelectedAgencies(e.target.value);
         await fetchAgent(e.target.value);
