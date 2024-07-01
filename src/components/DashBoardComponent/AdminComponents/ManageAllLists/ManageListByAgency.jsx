@@ -120,6 +120,7 @@ const ManageListByAgency = () => {
     const houseUpdate = async (e, house) => {
         try {
             const value = e.target.innerText.toLowerCase();
+            console.log("APAPAPAPAPAP",house.status);
 
             await fetch(
                 `https://api.propertyspotter.co.za/house/updateHouseDataByAgent/${house._id}`,
