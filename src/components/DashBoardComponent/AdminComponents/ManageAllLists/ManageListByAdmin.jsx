@@ -110,7 +110,8 @@ const ManageListByAdmin = () => {
                         agencyEmail: user.email,
                         agencyImage: user.photoURL,
                         spooterEmail: spooterEmail,
-                        random_id:random_id
+                        random_id:random_id,
+                        forStatus:true
                     }),
                 }
             );
@@ -140,6 +141,7 @@ const ManageListByAdmin = () => {
                     body: JSON.stringify({
                         agency: [selectedAgencies],
                         agentName: selectedAgent,
+                        forStatus:false
                     }),
                 }
             );
