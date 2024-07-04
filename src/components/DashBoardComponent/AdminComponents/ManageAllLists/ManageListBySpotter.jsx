@@ -138,6 +138,7 @@ const ManageListBySpotter = () => {
     const handleSubmit = async (house) => {
         try {
             console.log("HOUSE:::::", house,selectedAgent,selectedAgencies);
+            console.log("SA:::::", selectedAgent);
             const res = await fetch(
                 `https://api.propertyspotter.co.za/house/update/${house._id}`,
                 {
