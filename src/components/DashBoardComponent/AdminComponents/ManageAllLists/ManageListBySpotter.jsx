@@ -723,7 +723,7 @@ const ManageListBySpotter = () => {
                                                                                     idx
                                                                                 }
                                                                                 value={
-                                                                                    agent.name
+                                                                                    agent.email
                                                                                 }
                                                                                 className="text-black"
                                                                             >

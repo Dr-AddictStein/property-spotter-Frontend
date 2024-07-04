@@ -609,12 +609,7 @@ const ManageListByAdmin = () => {
                                                                                 e
                                                                             ) =>{
                                                                                 console.log("e.target",e.target)
-                                                                                setSelectedAgent(
-                                                                                    e
-                                                                                        .target
-                                                                                        .value
-                                                                                )
-
+                                                                                setSelectedAgent(e.target.value)
                                                                             }
                                                                             }
                                                                         >
@@ -638,7 +633,7 @@ const ManageListByAdmin = () => {
                                                                                             idx
                                                                                         }
                                                                                         value={
-                                                                                            agent.name
+                                                                                            agent.email
                                                                                         }
                                                                                         className="text-black"
                                                                                     >
