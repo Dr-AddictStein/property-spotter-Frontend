@@ -260,7 +260,7 @@ const ManageAgent = () => {
                       className="border border-black py-3 px-5 w-full"
                     />
                     <h1 className="absolute -top-2 left-4 px-1 bg-white text-sm">
-                      Agent Name
+                      Agent Email
                     </h1>
                   </div>
                   <div className="relative">
@@ -524,7 +524,7 @@ const ManageAgent = () => {
                   className="border border-black py-3 px-5 w-full"
                 />
                 <h1 className="absolute -top-2 left-4 px-1 bg-white text-sm">
-                  Agent Name
+                  Agent Email
                 </h1>
               </div>
               <div className="relative">

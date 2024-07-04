@@ -319,7 +319,7 @@ const ManageListByAgency = () => {
                                 <th>City</th>
                                 <th>Province</th>
                                 <th>Agency Name</th>
-                                <th>Agent Name</th>
+                                <th>Agent Email</th>
                                 <th>Agent Cellphone</th>
                                 <th>Action</th>
                                 <th>Action</th>
