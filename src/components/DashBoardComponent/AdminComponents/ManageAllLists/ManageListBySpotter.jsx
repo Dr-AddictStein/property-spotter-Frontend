@@ -99,8 +99,8 @@ const ManageListBySpotter = () => {
     const houseUpdate = async (e, house) => {
         try {
             const value = e.target.innerText.toLowerCase();
-            console.log("APAPAPAPAPAP",house.status);
-            console.log("APAPAPAPAPAP zzzzzzzz",house.random_id);
+            console.log("APAPAPAPAPAP", house.status);
+            console.log("APAPAPAPAPAP zzzzzzzz", house.random_id);
 
             await fetch(
                 `https://api.propertyspotter.co.za/house/updateHouseDataByAgent/${house._id}`,
@@ -114,10 +114,10 @@ const ManageListBySpotter = () => {
                         agencyName: house.agency[0],
                         // agencyEmail: user.email,
                         // agencyImage: user.photoURL,
-                        oldStatus:house.status,
-                        random_id:house.random_id,
-                        forStatus:true,
-                        house:house
+                        oldStatus: house.status,
+                        random_id: house.random_id,
+                        forStatus: true,
+                        house: house
                     }),
                 }
             );
@@ -147,8 +147,8 @@ const ManageListBySpotter = () => {
                     body: JSON.stringify({
                         agency: [selectedAgencies],
                         agent: selectedAgent,
-                        forStatus:false,
-                        house:house
+                        forStatus: false,
+                        house: house
                     }),
                 }
             );
@@ -160,7 +160,7 @@ const ManageListBySpotter = () => {
         }
     };
 
-    const addP24ID = async (e,id) => {
+    const addP24ID = async (e, id) => {
         e.preventDefault();
 
         // console.log("GUGUGU",e.target.p24id.value)
@@ -175,7 +175,7 @@ const ManageListBySpotter = () => {
                         "Content-Type": "application/json",
                     },
                     body: JSON.stringify({
-                        p24_id:e.target.p24id.value
+                        p24_id: e.target.p24id.value
                     }),
                 }
             );
@@ -187,7 +187,7 @@ const ManageListBySpotter = () => {
         }
     };
 
-    
+
     return (
         <div className="p-6">
             <Helmet>
@@ -309,7 +309,7 @@ const ManageListBySpotter = () => {
                                         <td>{house?.random_id}</td>
                                         <td className="flex gap-2">
 
-                                            <form onSubmit={(e)=>addP24ID(e,house?._id)} className="flex gap-2">
+                                            <form onSubmit={(e) => addP24ID(e, house?._id)} className="flex gap-2">
                                                 <input
                                                     type="text"
                                                     name="p24id"
@@ -324,7 +324,7 @@ const ManageListBySpotter = () => {
                                                     Change
                                                 </button>
                                             </form>
-                                            </td>
+                                        </td>
                                         <td>{house?.spooterName}</td>
                                         <td>{house?.spooterEmail}</td>
                                         <td>{house?.houseOwnerName}</td>
@@ -693,12 +693,15 @@ const ManageListBySpotter = () => {
                                                                     }
                                                                     onChange={(
                                                                         e
-                                                                    ) =>
+                                                                    ) => {
                                                                         setSelectedAgent(
                                                                             e
                                                                                 .target
                                                                                 .value
                                                                         )
+
+                                                                        console.log("e.target".target)
+                                                                    }
                                                                     }
                                                                 >
                                                                     <option
