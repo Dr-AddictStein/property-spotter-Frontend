@@ -120,7 +120,7 @@ const Navbar = () => {
                 </NavLink>
               </li>
             </ul>
-            <div className="hidden sm:block">
+            <div className="hidden md:block">
               {user ? (
                 <div className="dropdown cursor-pointer pt-1 dropdown-end">
                   <div className="avatar" tabIndex={0}>
@@ -405,6 +405,50 @@ const Navbar = () => {
                     Commercial
                   </NavLink>
                 </li>
+                {user && user?.role === "spotter" && (
+                      <>
+                        <li>
+                          <Link
+                            to="/manage-spotted-listings"
+                            className="justify-between"
+                          >
+                            Manage Spotted Listings
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            to="/successful-listings"
+                            className="justify-between"
+                          >
+                            Successful Listings
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            to="/unsuccessful-listings"
+                            className="justify-between"
+                          >
+                            Unsuccessful Listings
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            to="/paid-out-listings"
+                            className="justify-between"
+                          >
+                            Paid out Listings
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            to="/dashboard/message"
+                            className="justify-between"
+                          >
+                            Chat
+                          </Link>
+                        </li>
+                      </>
+                    )}
               </ul>
             </div>
           </div>
