@@ -137,6 +137,7 @@ const ManageListBySpotter = () => {
 
     const handleSubmit = async (house) => {
         try {
+            console.log("HOUSE:::::",house);
             const res = await fetch(
                 `https://api.propertyspotter.co.za/house/update/${house._id}`,
                 {
@@ -146,9 +147,9 @@ const ManageListBySpotter = () => {
                     },
                     body: JSON.stringify({
                         agency: [selectedAgencies],
-                        agent: selectedAgent,
-                        forStatus: false,
-                        house: house
+                        agentName: selectedAgent,
+                        forStatus:false,
+                        house:house
                     }),
                 }
             );
@@ -637,26 +638,36 @@ const ManageListBySpotter = () => {
                                             >
                                                 <div className="modal-box  space-y-10 space-x-5">
                                                     <h1 className="text-2xl font-bold">
-                                                        Select The Agency Agent
+                                                        Select The
+                                                        Agency Agent
                                                     </h1>
                                                     <div className="mt-6 relative">
                                                         <label className="block text-sm z-50 font-medium absolute -top-2 px-2 bg-white left-3 text-gray-700 rounded-xl">
-                                                            Select Agency
+                                                            Select
+                                                            Agency
                                                         </label>
                                                         <select
-                                                            defaultValue={""}
+                                                            defaultValue={
+                                                                ""
+                                                            }
                                                             className="select select-bordered w-full text-black"
-                                                            onChange={(e) =>
+                                                            onChange={(
+                                                                e
+                                                            ) =>
                                                                 handleAgencySelect(
                                                                     e
                                                                 )
                                                             }
                                                         >
                                                             <option
-                                                                value={""}
+                                                                value={
+                                                                    ""
+                                                                }
                                                                 disabled
                                                             >
-                                                                Select an agency
+                                                                Select
+                                                                an
+                                                                agency
                                                             </option>
                                                             {allAgency.map(
                                                                 (
@@ -681,10 +692,12 @@ const ManageListBySpotter = () => {
                                                         </select>
                                                     </div>
                                                     {selectedAgency &&
-                                                        (allAgent.length > 0 ? (
+                                                        (allAgent.length >
+                                                            0 ? (
                                                             <div className="mt-6 relative">
                                                                 <label className="block text-sm z-50 font-medium absolute -top-2 px-2 bg-white left-3 text-gray-700 rounded-xl">
-                                                                    Select Agent
+                                                                    Select
+                                                                    Agent
                                                                 </label>
                                                                 <select
                                                                     className="select select-bordered w-full text-black"
@@ -694,13 +707,8 @@ const ManageListBySpotter = () => {
                                                                     onChange={(
                                                                         e
                                                                     ) => {
-                                                                        setSelectedAgent(
-                                                                            e
-                                                                                .target
-                                                                                .value
-                                                                        )
-
-                                                                        console.log("e.target".target)
+                                                                        console.log("e.target", e.target)
+                                                                        setSelectedAgent(e.target.value)
                                                                     }
                                                                     }
                                                                 >
@@ -711,7 +719,8 @@ const ManageListBySpotter = () => {
                                                                         disabled
                                                                     >
                                                                         Select
-                                                                        an agent
+                                                                        an
+                                                                        agent
                                                                     </option>
                                                                     {allAgent.map(
                                                                         (
@@ -745,7 +754,9 @@ const ManageListBySpotter = () => {
                                                     <div>
                                                         <button
                                                             className="btn btn-accent"
-                                                            onClick={(e) =>
+                                                            onClick={(
+                                                                e
+                                                            ) =>
                                                                 handleSubmit(
                                                                     house
                                                                 )
