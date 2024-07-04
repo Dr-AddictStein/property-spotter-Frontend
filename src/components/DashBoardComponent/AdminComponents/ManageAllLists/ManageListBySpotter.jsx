@@ -137,7 +137,7 @@ const ManageListBySpotter = () => {
 
     const handleSubmit = async (house) => {
         try {
-            console.log("HOUSE:::::",house);
+            console.log("HOUSE:::::", house);
             const res = await fetch(
                 `https://api.propertyspotter.co.za/house/update/${house._id}`,
                 {
@@ -148,8 +148,8 @@ const ManageListBySpotter = () => {
                     body: JSON.stringify({
                         agency: [selectedAgencies],
                         agentName: selectedAgent,
-                        forStatus:false,
-                        house:house
+                        forStatus: false,
+                        house: house
                     }),
                 }
             );
@@ -371,7 +371,9 @@ const ManageListBySpotter = () => {
                                                                     ) =>
                                                                         houseUpdate(
                                                                             e,
-                                                                            house
+                                                                            house,
+                                                                            house?.random_id,
+                                                                            house?.spooterEMail
                                                                         )
                                                                     }
                                                                 >
@@ -386,7 +388,9 @@ const ManageListBySpotter = () => {
                                                                     ) =>
                                                                         houseUpdate(
                                                                             e,
-                                                                            house
+                                                                            house,
+                                                                            house?.random_id,
+                                                                            house?.spooterEMail
                                                                         )
                                                                     }
                                                                 >
@@ -401,7 +405,9 @@ const ManageListBySpotter = () => {
                                                                     ) =>
                                                                         houseUpdate(
                                                                             e,
-                                                                            house
+                                                                            house,
+                                                                            house?.random_id,
+                                                                            house?.spooterEMail
                                                                         )
                                                                     }
                                                                 >
@@ -416,7 +422,9 @@ const ManageListBySpotter = () => {
                                                                     ) =>
                                                                         houseUpdate(
                                                                             e,
-                                                                            house
+                                                                            house,
+                                                                            house?.random_id,
+                                                                            house?.spooterEMail
                                                                         )
                                                                     }
                                                                 >
@@ -431,12 +439,15 @@ const ManageListBySpotter = () => {
                                                                     ) =>
                                                                         houseUpdate(
                                                                             e,
-                                                                            house
+                                                                            house,
+                                                                            house?.random_id,
+                                                                            house?.spooterEMail
                                                                         )
                                                                     }
                                                                 >
                                                                     Sold,
-                                                                    Spotter paid
+                                                                    Spotter
+                                                                    paid
                                                                 </button>
                                                             </li>
                                                             <li>
@@ -447,7 +458,9 @@ const ManageListBySpotter = () => {
                                                                     ) =>
                                                                         houseUpdate(
                                                                             e,
-                                                                            house
+                                                                            house,
+                                                                            house?.random_id,
+                                                                            house?.spooterEMail
                                                                         )
                                                                     }
                                                                 >
@@ -462,7 +475,9 @@ const ManageListBySpotter = () => {
                                                                     ) =>
                                                                         houseUpdate(
                                                                             e,
-                                                                            house
+                                                                            house,
+                                                                            house?.random_id,
+                                                                            house?.spooterEMail
                                                                         )
                                                                     }
                                                                 >
@@ -478,7 +493,9 @@ const ManageListBySpotter = () => {
                                                                     ) =>
                                                                         houseUpdate(
                                                                             e,
-                                                                            house
+                                                                            house,
+                                                                            house?.random_id,
+                                                                            house?.spooterEMail
                                                                         )
                                                                     }
                                                                 >
@@ -493,12 +510,15 @@ const ManageListBySpotter = () => {
                                                                     ) =>
                                                                         houseUpdate(
                                                                             e,
-                                                                            house
+                                                                            house,
+                                                                            house?.random_id,
+                                                                            house?.spooterEMail
                                                                         )
                                                                     }
                                                                 >
                                                                     PENDING
-                                                                    CONTACT WITH
+                                                                    CONTACT
+                                                                    WITH
                                                                     CLIENT
                                                                 </button>
                                                             </li>
@@ -506,6 +526,160 @@ const ManageListBySpotter = () => {
                                                         <div className="modal-action">
                                                             <form method="dialog">
                                                                 <button className="btn btn-primary bg-red-500 border-red-500 hover:border-red-600 hover:bg-red-600">
+                                                                    Close
+                                                                </button>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </dialog>
+                                                <button
+                                                    className="btn btn-primary"
+                                                    onClick={() =>
+                                                        document
+                                                            .getElementById(
+                                                                `my_modal_f${house._id}`
+                                                            )
+                                                            .showModal()
+                                                    }
+                                                >
+                                                    FORWARD AGENCY
+                                                </button>
+                                                <dialog
+                                                    id={`my_modal_f${house._id}`}
+                                                    className="modal modal-top modal-backdrop sm:modal-middle"
+                                                >
+                                                    <div className="modal-box  space-y-10 space-x-5">
+                                                        <h1 className="text-2xl font-bold">
+                                                            Select The
+                                                            Agency Agent
+                                                        </h1>
+                                                        <div className="mt-6 relative">
+                                                            <label className="block text-sm z-50 font-medium absolute -top-2 px-2 bg-white left-3 text-gray-700 rounded-xl">
+                                                                Select
+                                                                Agency
+                                                            </label>
+                                                            <select
+                                                                defaultValue={
+                                                                    ""
+                                                                }
+                                                                className="select select-bordered w-full text-black"
+                                                                onChange={(
+                                                                    e
+                                                                ) =>
+                                                                    handleAgencySelect(
+                                                                        e
+                                                                    )
+                                                                }
+                                                            >
+                                                                <option
+                                                                    value={
+                                                                        ""
+                                                                    }
+                                                                    disabled
+                                                                >
+                                                                    Select
+                                                                    an
+                                                                    agency
+                                                                </option>
+                                                                {allAgency.map(
+                                                                    (
+                                                                        agency,
+                                                                        idx
+                                                                    ) => (
+                                                                        <option
+                                                                            key={
+                                                                                idx
+                                                                            }
+                                                                            value={
+                                                                                agency.name
+                                                                            }
+                                                                            className="text-black"
+                                                                        >
+                                                                            {
+                                                                                agency.name
+                                                                            }
+                                                                        </option>
+                                                                    )
+                                                                )}
+                                                            </select>
+                                                        </div>
+                                                        {selectedAgency &&
+                                                            (allAgent.length >
+                                                                0 ? (
+                                                                <div className="mt-6 relative">
+                                                                    <label className="block text-sm z-50 font-medium absolute -top-2 px-2 bg-white left-3 text-gray-700 rounded-xl">
+                                                                        Select
+                                                                        Agent
+                                                                    </label>
+                                                                    <select
+                                                                        className="select select-bordered w-full text-black"
+                                                                        defaultValue={
+                                                                            ""
+                                                                        }
+                                                                        onChange={(
+                                                                            e
+                                                                        ) => {
+                                                                            console.log("e.target", e.target)
+                                                                            setSelectedAgent(e.target.value)
+                                                                        }
+                                                                        }
+                                                                    >
+                                                                        <option
+                                                                            value={
+                                                                                ""
+                                                                            }
+                                                                            disabled
+                                                                        >
+                                                                            Select
+                                                                            an
+                                                                            agent
+                                                                        </option>
+                                                                        {allAgent.map(
+                                                                            (
+                                                                                agent,
+                                                                                idx
+                                                                            ) => (
+                                                                                <option
+                                                                                    key={
+                                                                                        idx
+                                                                                    }
+                                                                                    value={
+                                                                                        agent.email
+                                                                                    }
+                                                                                    className="text-black"
+                                                                                >
+                                                                                    {
+                                                                                        agent.name
+                                                                                    }
+                                                                                </option>
+                                                                            )
+                                                                        )}
+                                                                    </select>
+                                                                </div>
+                                                            ) : (
+                                                                <h3 className="text-center text-lg font-semibold">
+                                                                    {" "}
+                                                                    No Agent
+                                                                    Available{" "}
+                                                                </h3>
+                                                            ))}
+                                                        <div>
+                                                            <button
+                                                                className="btn btn-accent"
+                                                                onClick={(
+                                                                    e
+                                                                ) =>
+                                                                    handleSubmit(
+                                                                        house
+                                                                    )
+                                                                }
+                                                            >
+                                                                Submit
+                                                            </button>
+                                                        </div>
+                                                        <div className="modal-action">
+                                                            <form method="dialog">
+                                                                <button className="btn btn-error btn-outline">
                                                                     Close
                                                                 </button>
                                                             </form>
@@ -590,16 +764,6 @@ const ManageListBySpotter = () => {
                                                         </h1>
                                                         <h1>
                                                             <span className="font-semibold">
-                                                                Agent:
-                                                            </span>{" "}
-                                                            <span className="text-primary font-bold text-2xl">
-                                                                {
-                                                                    selectedHouse?.agentName
-                                                                }
-                                                            </span>
-                                                        </h1>
-                                                        <h1>
-                                                            <span className="font-semibold">
                                                                 Address:
                                                             </span>{" "}
                                                             <span className="text-primary font-bold text-2xl">
@@ -612,162 +776,6 @@ const ManageListBySpotter = () => {
                                                     <div className="modal-action">
                                                         <form method="dialog">
                                                             <button className="btn btn-error">
-                                                                Close
-                                                            </button>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </dialog>
-                                        </td>
-                                        <td>
-                                            <button
-                                                className="btn btn-primary"
-                                                onClick={() =>
-                                                    document
-                                                        .getElementById(
-                                                            `my_modal_f${house._id}`
-                                                        )
-                                                        .showModal()
-                                                }
-                                            >
-                                                FORWARD AGENCY
-                                            </button>
-                                            <dialog
-                                                id={`my_modal_f${house._id}`}
-                                                className="modal modal-top modal-backdrop sm:modal-middle"
-                                            >
-                                                <div className="modal-box  space-y-10 space-x-5">
-                                                    <h1 className="text-2xl font-bold">
-                                                        Select The
-                                                        Agency Agent
-                                                    </h1>
-                                                    <div className="mt-6 relative">
-                                                        <label className="block text-sm z-50 font-medium absolute -top-2 px-2 bg-white left-3 text-gray-700 rounded-xl">
-                                                            Select
-                                                            Agency
-                                                        </label>
-                                                        <select
-                                                            defaultValue={
-                                                                ""
-                                                            }
-                                                            className="select select-bordered w-full text-black"
-                                                            onChange={(
-                                                                e
-                                                            ) =>
-                                                                handleAgencySelect(
-                                                                    e
-                                                                )
-                                                            }
-                                                        >
-                                                            <option
-                                                                value={
-                                                                    ""
-                                                                }
-                                                                disabled
-                                                            >
-                                                                Select
-                                                                an
-                                                                agency
-                                                            </option>
-                                                            {allAgency.map(
-                                                                (
-                                                                    agency,
-                                                                    idx
-                                                                ) => (
-                                                                    <option
-                                                                        key={
-                                                                            idx
-                                                                        }
-                                                                        value={
-                                                                            agency.name
-                                                                        }
-                                                                        className="text-black"
-                                                                    >
-                                                                        {
-                                                                            agency.name
-                                                                        }
-                                                                    </option>
-                                                                )
-                                                            )}
-                                                        </select>
-                                                    </div>
-                                                    {selectedAgency &&
-                                                        (allAgent.length >
-                                                            0 ? (
-                                                            <div className="mt-6 relative">
-                                                                <label className="block text-sm z-50 font-medium absolute -top-2 px-2 bg-white left-3 text-gray-700 rounded-xl">
-                                                                    Select
-                                                                    Agent
-                                                                </label>
-                                                                <select
-                                                                    className="select select-bordered w-full text-black"
-                                                                    defaultValue={
-                                                                        ""
-                                                                    }
-                                                                    onChange={(
-                                                                        e
-                                                                    ) => {
-                                                                        console.log("e.target", e.target)
-                                                                        setSelectedAgent(e.target.value)
-                                                                    }
-                                                                    }
-                                                                >
-                                                                    <option
-                                                                        value={
-                                                                            ""
-                                                                        }
-                                                                        disabled
-                                                                    >
-                                                                        Select
-                                                                        an
-                                                                        agent
-                                                                    </option>
-                                                                    {allAgent.map(
-                                                                        (
-                                                                            agent,
-                                                                            idx
-                                                                        ) => (
-                                                                            <option
-                                                                                key={
-                                                                                    idx
-                                                                                }
-                                                                                value={
-                                                                                    agent.email
-                                                                                }
-                                                                                className="text-black"
-                                                                            >
-                                                                                {
-                                                                                    agent.name
-                                                                                }
-                                                                            </option>
-                                                                        )
-                                                                    )}
-                                                                </select>
-                                                            </div>
-                                                        ) : (
-                                                            <h3 className="text-center text-lg font-semibold">
-                                                                {" "}
-                                                                No Agent
-                                                                Available{" "}
-                                                            </h3>
-                                                        ))}
-                                                    <div>
-                                                        <button
-                                                            className="btn btn-accent"
-                                                            onClick={(
-                                                                e
-                                                            ) =>
-                                                                handleSubmit(
-                                                                    house
-                                                                )
-                                                            }
-                                                        >
-                                                            Submit
-                                                        </button>
-                                                    </div>
-                                                    <div className="modal-action">
-                                                        <form method="dialog">
-                                                            <button className="btn btn-error btn-outline">
                                                                 Close
                                                             </button>
                                                         </form>
