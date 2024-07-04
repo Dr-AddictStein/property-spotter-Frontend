@@ -344,7 +344,7 @@ const SoopReg = () => {
                         <div className="text-center">
                             <small>
                                 By continuing I understand and agree with
-                                Property24’s{" "}
+                                Property-Spotter’s{" "}
                                 <Link
                                     to="/forgot-password"
                                     className="link link-info"
