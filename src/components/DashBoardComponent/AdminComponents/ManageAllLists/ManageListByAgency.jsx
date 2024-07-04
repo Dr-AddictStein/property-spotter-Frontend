@@ -669,7 +669,7 @@ const ManageListByAgency = () => {
                                             </div>
                                         </td>
                                         <td>
-                                            <button
+                                            {/* <button
                                                 className="btn btn-primary"
                                                 onClick={() =>
                                                     document
@@ -680,7 +680,7 @@ const ManageListByAgency = () => {
                                                 }
                                             >
                                                 FORWARD AGENCY
-                                            </button>
+                                            </button> */}
                                             <dialog
                                                 id={`my_modal_f${house._id}`}
                                                 className="modal modal-top modal-backdrop sm:modal-middle"
