@@ -607,12 +607,15 @@ const ManageListByAdmin = () => {
                                                                             }
                                                                             onChange={(
                                                                                 e
-                                                                            ) =>
+                                                                            ) =>{
+                                                                                console.log("e.target".target)
                                                                                 setSelectedAgent(
                                                                                     e
                                                                                         .target
                                                                                         .value
                                                                                 )
+
+                                                                            }
                                                                             }
                                                                         >
                                                                             <option
