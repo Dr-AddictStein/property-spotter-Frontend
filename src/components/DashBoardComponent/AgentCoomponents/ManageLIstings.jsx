@@ -16,7 +16,7 @@ const ManageListings = () => {
     const fetchListingData = async () => {
         if (user) {
             try {
-                const url = `https://api.propertyspotter.co.za/house/houseDataByAgent/${user?.name}`;
+                const url = `https://api.propertyspotter.co.za/house/houseDataByAgent/${user?.email}`;
                 const response = await axios.get(url);
                 setListings(response.data);
             } catch (error) {
