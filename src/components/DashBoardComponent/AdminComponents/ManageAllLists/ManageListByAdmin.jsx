@@ -608,7 +608,7 @@ const ManageListByAdmin = () => {
                                                                             onChange={(
                                                                                 e
                                                                             ) =>{
-                                                                                console.log("e.target".target)
+                                                                                console.log("e.target",e.target)
                                                                                 setSelectedAgent(
                                                                                     e
                                                                                         .target
