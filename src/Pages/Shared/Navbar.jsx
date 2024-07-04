@@ -411,6 +411,9 @@ const Navbar = () => {
                           <Link
                             to="/manage-spotted-listings"
                             className="justify-between"
+                            onClick={()=>{
+                              setIsMenuOPen(false);
+                            }}
                           >
                             Manage Spotted Listings
                           </Link>
@@ -419,6 +422,9 @@ const Navbar = () => {
                           <Link
                             to="/successful-listings"
                             className="justify-between"
+                            onClick={()=>{
+                              setIsMenuOPen(false);
+                            }}
                           >
                             Successful Listings
                           </Link>
@@ -427,6 +433,9 @@ const Navbar = () => {
                           <Link
                             to="/unsuccessful-listings"
                             className="justify-between"
+                            onClick={()=>{
+                              setIsMenuOPen(false);
+                            }}
                           >
                             Unsuccessful Listings
                           </Link>
@@ -435,6 +444,9 @@ const Navbar = () => {
                           <Link
                             to="/paid-out-listings"
                             className="justify-between"
+                            onClick={()=>{
+                              setIsMenuOPen(false);
+                            }}
                           >
                             Paid out Listings
                           </Link>
@@ -443,6 +455,9 @@ const Navbar = () => {
                           <Link
                             to="/dashboard/message"
                             className="justify-between"
+                            onClick={()=>{
+                              setIsMenuOPen(false);
+                            }}
                           >
                             Chat
                           </Link>
