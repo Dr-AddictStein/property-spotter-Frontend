@@ -120,7 +120,7 @@ const Navbar = () => {
                 </NavLink>
               </li>
             </ul>
-            <div className="hidden md:block">
+            <div className="hidden sm:block">
               {user ? (
                 <div className="dropdown cursor-pointer pt-1 dropdown-end">
                   <div className="avatar" tabIndex={0}>
