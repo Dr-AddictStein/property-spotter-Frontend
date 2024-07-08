@@ -44,7 +44,6 @@ const SplashScreen = () => {
             const url = "https://api.propertyspotter.co.za/signup/spotter";
             try {
                 const res = await axios.post(url, data, config);
-                console.log("FUCKED",res);
                 message.success("Spooter Registration Successfull!");
                 form.resetFields();
                 navigate("/otp");
@@ -258,7 +257,7 @@ const SplashScreen = () => {
                                 getValueFromEvent={normFile}
                                 rules={[
                                     {
-                                        required: true,
+                                        required: false,
                                         message: "Please upload a Image!",
                                     },
                                 ]}
