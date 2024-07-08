@@ -33,7 +33,9 @@ const SplashScreen = () => {
             data.append("email", email);
             data.append("role", "spotter");
             data.append("password", password);
-            data.append("images", fileList[0].originFileObj);
+            if(fileList[0].originFileObj){
+                data.append("images", fileList[0].originFileObj);
+            }
             data.append("termsAndcondition", true);
 
             const config = {
