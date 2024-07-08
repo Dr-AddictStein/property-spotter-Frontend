@@ -45,7 +45,7 @@ const SignUp = () => {
       const data = new FormData();
       data.append("name", name);
       data.append("email", email);
-      data.append("role", "user");
+      data.append("role", "spotter");
       data.append("password", confirmPassword);
       if (fileList.length > 0 && fileList[0].originFileObj) {
         data.append("images", fileList[0].originFileObj);
