@@ -255,12 +255,12 @@ const SplashScreen = () => {
                                 name="user_image"
                                 valuePropName="fileList"
                                 getValueFromEvent={normFile}
-                                rules={[
-                                    {
-                                        required: false,
-                                        message: "Please upload a Image!",
-                                    },
-                                ]}
+                                // rules={[
+                                //     {
+                                //         required: false,
+                                //         message: "Please upload a Image!",
+                                //     },
+                                // ]}
                             >
                                 <Upload
                                     name="logo"
