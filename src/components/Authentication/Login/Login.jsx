@@ -35,7 +35,7 @@ const Login = () => {
                     const userData = {
                         name: person?.displayName,
                         email: person?.email,
-                        role: "user",
+                        role: "spotter",
                         password: "",
                         photoURL: person?.photoURL,
                     };
@@ -56,7 +56,7 @@ const Login = () => {
                                 setUser(userData);
                                 localStorage.setItem("access-token", token);
                                 if (
-                                    userData?.role === "user" ||
+                                    userData?.role === "spotter" ||
                                     userData?.role === "spotter"
                                 ) {
                                     navigate("/");
@@ -84,7 +84,7 @@ const Login = () => {
                     email: user.email,
                     password: "",
                     photoURL: user?.photoURL,
-                    role: "user",
+                    role: "spotter",
                 };
 
                 axios
@@ -96,7 +96,7 @@ const Login = () => {
                     .then(() => {
                         message.success("Login successful");
                         if (
-                            userData?.role === "user" ||
+                            userData?.role === "spotter" ||
                             userData?.role === "spotter"
                         ) {
                             navigate("/");
@@ -113,8 +113,8 @@ const Login = () => {
             });
     };
     if (user) {
-        if (user?.role === "user" || user?.role === "spotter") navigate("/");
-        if (user?.role !== "user" && user?.role !== "spotter")
+        if (user?.role === "spotter" || user?.role === "spotter") navigate("/");
+        if (user?.role !== "spotter" && user?.role !== "spotter")
             navigate("/dashboard");
     }
 
