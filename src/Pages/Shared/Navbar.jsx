@@ -3,7 +3,7 @@ import { GrUserManager } from "react-icons/gr";
 import { LuMenu, LuX } from "react-icons/lu";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
-import logo from "../../assets/logo/whiteBG.jpg";
+import logo from "../../assets/logo/logo.png";
 
 const Navbar = () => {
   const { user, logOut, loading } = useContext(AuthContext);
