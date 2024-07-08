@@ -47,7 +47,9 @@ const SignUp = () => {
       data.append("email", email);
       data.append("role", "user");
       data.append("password", confirmPassword);
-      data.append("images", fileList[0].originFileObj);
+      if (fileList.length > 0 && fileList[0].originFileObj) {
+        data.append("images", fileList[0].originFileObj);
+      }
       data.append("termsAndcondition", remember);
 
       const config = {
@@ -55,7 +57,7 @@ const SignUp = () => {
           "content-type": "multipart/form-data",
         },
       };
-      const url = "https://api.propertyspotter.co.za/signup";
+      const url = "https://api.propertyspotter.co.za/signup/spotter";
 
       try {
         await axios.post(url, data, config);
@@ -107,7 +109,7 @@ const SignUp = () => {
           const userData = {
             name: person?.displayName,
             email: person?.email,
-            role: "user",
+            role: "spotter",
             password: "",
             photoURL: person?.photoURL,
           };
@@ -155,7 +157,7 @@ const SignUp = () => {
           email: user.email,
           password: "",
           photoURL: user?.photoURL,
-          role: "user",
+          role: "spotter",
         };
 
 
@@ -226,12 +228,6 @@ const SignUp = () => {
           name="user_image"
           valuePropName="fileList"
           getValueFromEvent={normFile}
-          rules={[
-            {
-              required: true,
-              message: "Please upload a Image!",
-            },
-          ]}
         >
           <Upload
             name="logo"
