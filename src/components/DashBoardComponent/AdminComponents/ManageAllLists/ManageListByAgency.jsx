@@ -385,7 +385,7 @@ const ManageListByAgency = () => {
                                         <td>{house.city}</td>
                                         <td>{house.province}</td>
                                         <td>{house.agency[0]}</td>
-                                        <td>{house.agentName}</td>
+                                        <td>{house.agentEmail}</td>
                                         <td>{house?.agentPhone}</td>
                                         {/* <td>{house.agent.phone}</td> */}
                                         <td>
