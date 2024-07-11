@@ -141,7 +141,7 @@ const ManageListByAgency = () => {
                 }
             );
             toast.success(`Successfully ${value}`);
-            fetchListingData();
+            fetchListingAgency();
             document.getElementById(`my_modal_${house._id}`).close();
         } catch (error) {
             console.log(error);
