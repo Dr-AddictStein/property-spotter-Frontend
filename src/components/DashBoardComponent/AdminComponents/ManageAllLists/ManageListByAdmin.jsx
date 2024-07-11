@@ -111,7 +111,8 @@ const ManageListByAdmin = () => {
                         agencyImage: user.photoURL,
                         spooterEmail: spooterEmail,
                         random_id:random_id,
-                        forStatus:true
+                        forStatus:true,
+                        house:house
                     }),
                 }
             );
