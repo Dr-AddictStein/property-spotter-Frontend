@@ -68,22 +68,29 @@ const PendingSpottedLists = () => {
     // Change page
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
-    const houseUpdate = async (e, house) => {
+    const houseUpdate = async (e, house, random_id, spooterEmail) => {
         try {
             const value = e.target.innerText.toLowerCase();
-            await fetch(`https://api.propertyspotter.co.za/house/update/${house._id}`, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                    status: value,
-                    agencyName: user?.name,
-                    agencyEmail: user?.email,
-                    agencyImage: user?.photoURL,
-                    agency: [user?.name],
-                }),
-            });
+            const res = await fetch(
+                `https://api.propertyspotter.co.za/house/update/${house._id}`,
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        status: value,
+                        agencyName: user.name,
+                        agencyEmail: user.email,
+                        agencyImage: user.photoURL,
+                        spooterEmail: spooterEmail,
+                        random_id:random_id,
+                        forStatus:true,
+                        house:house,
+                        hasAgent:false
+                    }),
+                }
+            );
             toast.success(`Successfully ${value}`);
             fetchListingData();
             document.getElementById(`my_modal_${house._id}`).close();
@@ -195,9 +202,11 @@ const PendingSpottedLists = () => {
                                                                         e
                                                                     ) =>
                                                                         houseUpdate(
-                                                                            e,
-                                                                            house
-                                                                        )
+                                                                                e,
+                                                                                house,
+                                                                                house?.random_id,
+                                                                                house?.spooterEmail
+                                                                            )
                                                                     }
                                                                 >
                                                                     New
@@ -210,9 +219,11 @@ const PendingSpottedLists = () => {
                                                                         e
                                                                     ) =>
                                                                         houseUpdate(
-                                                                            e,
-                                                                            house
-                                                                        )
+                                                                                e,
+                                                                                house,
+                                                                                house?.random_id,
+                                                                                house?.spooterEmail
+                                                                            )
                                                                     }
                                                                 >
                                                                     sold
@@ -225,9 +236,11 @@ const PendingSpottedLists = () => {
                                                                         e
                                                                     ) =>
                                                                         houseUpdate(
-                                                                            e,
-                                                                            house
-                                                                        )
+                                                                                e,
+                                                                                house,
+                                                                                house?.random_id,
+                                                                                house?.spooterEmail
+                                                                            )
                                                                     }
                                                                 >
                                                                     Available
@@ -240,9 +253,11 @@ const PendingSpottedLists = () => {
                                                                         e
                                                                     ) =>
                                                                         houseUpdate(
-                                                                            e,
-                                                                            house
-                                                                        )
+                                                                                e,
+                                                                                house,
+                                                                                house?.random_id,
+                                                                                house?.spooterEmail
+                                                                            )
                                                                     }
                                                                 >
                                                                     Unsuccessful
@@ -255,9 +270,11 @@ const PendingSpottedLists = () => {
                                                                         e
                                                                     ) =>
                                                                         houseUpdate(
-                                                                            e,
-                                                                            house
-                                                                        )
+                                                                                e,
+                                                                                house,
+                                                                                house?.random_id,
+                                                                                house?.spooterEmail
+                                                                            )
                                                                     }
                                                                 >
                                                                     Sold,
@@ -271,9 +288,11 @@ const PendingSpottedLists = () => {
                                                                         e
                                                                     ) =>
                                                                         houseUpdate(
-                                                                            e,
-                                                                            house
-                                                                        )
+                                                                                e,
+                                                                                house,
+                                                                                house?.random_id,
+                                                                                house?.spooterEmail
+                                                                            )
                                                                     }
                                                                 >
                                                                     Hold
@@ -286,9 +305,11 @@ const PendingSpottedLists = () => {
                                                                         e
                                                                     ) =>
                                                                         houseUpdate(
-                                                                            e,
-                                                                            house
-                                                                        )
+                                                                                e,
+                                                                                house,
+                                                                                house?.random_id,
+                                                                                house?.spooterEmail
+                                                                            )
                                                                     }
                                                                 >
                                                                     PENDING
@@ -302,9 +323,11 @@ const PendingSpottedLists = () => {
                                                                         e
                                                                     ) =>
                                                                         houseUpdate(
-                                                                            e,
-                                                                            house
-                                                                        )
+                                                                                e,
+                                                                                house,
+                                                                                house?.random_id,
+                                                                                house?.spooterEmail
+                                                                            )
                                                                     }
                                                                 >
                                                                     Pending
@@ -317,9 +340,11 @@ const PendingSpottedLists = () => {
                                                                         e
                                                                     ) =>
                                                                         houseUpdate(
-                                                                            e,
-                                                                            house
-                                                                        )
+                                                                                e,
+                                                                                house,
+                                                                                house?.random_id,
+                                                                                house?.spooterEmail
+                                                                            )
                                                                     }
                                                                 >
                                                                     PENDING
