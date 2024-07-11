@@ -96,14 +96,11 @@ const ManageListBySpotter = () => {
     // Change page
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
-    const houseUpdate = async (e, house) => {
+    const houseUpdate = async (e, house, random_id, spooterEmail) => {
         try {
             const value = e.target.innerText.toLowerCase();
-            console.log("APAPAPAPAPAP", house.status);
-            console.log("APAPAPAPAPAP zzzzzzzz", house.random_id);
-
-            await fetch(
-                `https://api.propertyspotter.co.za/house/updateHouseDataByAgent/${house._id}`,
+            const res = await fetch(
+                `https://api.propertyspotter.co.za/house/update/${house._id}`,
                 {
                     method: "POST",
                     headers: {
@@ -111,13 +108,14 @@ const ManageListBySpotter = () => {
                     },
                     body: JSON.stringify({
                         status: value,
-                        agencyName: house.agency[0],
-                        // agencyEmail: user.email,
-                        // agencyImage: user.photoURL,
-                        oldStatus: house.status,
-                        random_id: house.random_id,
-                        forStatus: true,
-                        house: house
+                        agencyName: user.name,
+                        agencyEmail: user.email,
+                        agencyImage: user.photoURL,
+                        spooterEmail: spooterEmail,
+                        random_id:random_id,
+                        forStatus:true,
+                        house:house,
+                        hasAgent:false
                     }),
                 }
             );
@@ -374,7 +372,7 @@ const ManageListBySpotter = () => {
                                                                             e,
                                                                             house,
                                                                             house?.random_id,
-                                                                            house?.spooterEMail
+                                                                            house?.spooterEmail
                                                                         )
                                                                     }
                                                                 >
@@ -391,7 +389,7 @@ const ManageListBySpotter = () => {
                                                                             e,
                                                                             house,
                                                                             house?.random_id,
-                                                                            house?.spooterEMail
+                                                                            house?.spooterEmail
                                                                         )
                                                                     }
                                                                 >
@@ -408,7 +406,7 @@ const ManageListBySpotter = () => {
                                                                             e,
                                                                             house,
                                                                             house?.random_id,
-                                                                            house?.spooterEMail
+                                                                            house?.spooterEmail
                                                                         )
                                                                     }
                                                                 >
@@ -425,7 +423,7 @@ const ManageListBySpotter = () => {
                                                                             e,
                                                                             house,
                                                                             house?.random_id,
-                                                                            house?.spooterEMail
+                                                                            house?.spooterEmail
                                                                         )
                                                                     }
                                                                 >
@@ -442,7 +440,7 @@ const ManageListBySpotter = () => {
                                                                             e,
                                                                             house,
                                                                             house?.random_id,
-                                                                            house?.spooterEMail
+                                                                            house?.spooterEmail
                                                                         )
                                                                     }
                                                                 >
@@ -461,7 +459,7 @@ const ManageListBySpotter = () => {
                                                                             e,
                                                                             house,
                                                                             house?.random_id,
-                                                                            house?.spooterEMail
+                                                                            house?.spooterEmail
                                                                         )
                                                                     }
                                                                 >
@@ -478,7 +476,7 @@ const ManageListBySpotter = () => {
                                                                             e,
                                                                             house,
                                                                             house?.random_id,
-                                                                            house?.spooterEMail
+                                                                            house?.spooterEmail
                                                                         )
                                                                     }
                                                                 >
@@ -496,7 +494,7 @@ const ManageListBySpotter = () => {
                                                                             e,
                                                                             house,
                                                                             house?.random_id,
-                                                                            house?.spooterEMail
+                                                                            house?.spooterEmail
                                                                         )
                                                                     }
                                                                 >
@@ -513,7 +511,7 @@ const ManageListBySpotter = () => {
                                                                             e,
                                                                             house,
                                                                             house?.random_id,
-                                                                            house?.spooterEMail
+                                                                            house?.spooterEmail
                                                                         )
                                                                     }
                                                                 >

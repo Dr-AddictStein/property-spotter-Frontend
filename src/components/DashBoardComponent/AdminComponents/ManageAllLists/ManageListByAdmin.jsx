@@ -365,7 +365,7 @@ const ManageListByAdmin = () => {
                                                                                 e,
                                                                                 house,
                                                                                 house?.random_id,
-                                                                                house?.spooterEMail
+                                                                                house?.spooterEmail
                                                                             )
                                                                         }
                                                                     >
@@ -382,7 +382,7 @@ const ManageListByAdmin = () => {
                                                                                 e,
                                                                                 house,
                                                                                 house?.random_id,
-                                                                                house?.spooterEMail
+                                                                                house?.spooterEmail
                                                                             )
                                                                         }
                                                                     >
@@ -399,7 +399,7 @@ const ManageListByAdmin = () => {
                                                                                 e,
                                                                                 house,
                                                                                 house?.random_id,
-                                                                                house?.spooterEMail
+                                                                                house?.spooterEmail
                                                                             )
                                                                         }
                                                                     >
@@ -416,7 +416,7 @@ const ManageListByAdmin = () => {
                                                                                 e,
                                                                                 house,
                                                                                 house?.random_id,
-                                                                                house?.spooterEMail
+                                                                                house?.spooterEmail
                                                                             )
                                                                         }
                                                                     >
@@ -433,7 +433,7 @@ const ManageListByAdmin = () => {
                                                                                 e,
                                                                                 house,
                                                                                 house?.random_id,
-                                                                                house?.spooterEMail
+                                                                                house?.spooterEmail
                                                                             )
                                                                         }
                                                                     >
@@ -452,7 +452,7 @@ const ManageListByAdmin = () => {
                                                                                 e,
                                                                                 house,
                                                                                 house?.random_id,
-                                                                                house?.spooterEMail
+                                                                                house?.spooterEmail
                                                                             )
                                                                         }
                                                                     >
@@ -469,7 +469,7 @@ const ManageListByAdmin = () => {
                                                                                 e,
                                                                                 house,
                                                                                 house?.random_id,
-                                                                                house?.spooterEMail
+                                                                                house?.spooterEmail
                                                                             )
                                                                         }
                                                                     >
@@ -487,7 +487,7 @@ const ManageListByAdmin = () => {
                                                                                 e,
                                                                                 house,
                                                                                 house?.random_id,
-                                                                                house?.spooterEMail
+                                                                                house?.spooterEmail
                                                                             )
                                                                         }
                                                                     >
@@ -504,7 +504,7 @@ const ManageListByAdmin = () => {
                                                                                 e,
                                                                                 house,
                                                                                 house?.random_id,
-                                                                                house?.spooterEMail
+                                                                                house?.spooterEmail
                                                                             )
                                                                         }
                                                                     >
