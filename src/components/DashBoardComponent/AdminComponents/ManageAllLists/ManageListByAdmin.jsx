@@ -112,7 +112,8 @@ const ManageListByAdmin = () => {
                         spooterEmail: spooterEmail,
                         random_id:random_id,
                         forStatus:true,
-                        house:house
+                        house:house,
+                        hasAgent:false
                     }),
                 }
             );
@@ -144,7 +145,8 @@ const ManageListByAdmin = () => {
                         agency: [selectedAgencies],
                         agentName: selectedAgent,
                         forStatus:false,
-                        house:house
+                        house:house,
+                        hasAgent:false
                     }),
                 }
             );
