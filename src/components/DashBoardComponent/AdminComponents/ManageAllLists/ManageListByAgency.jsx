@@ -117,14 +117,11 @@ const ManageListByAgency = () => {
     // Change page
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
-    const houseUpdate = async (e, house) => {
+    const houseUpdate = async (e, house, random_id, spooterEmail) => {
         try {
             const value = e.target.innerText.toLowerCase();
-            console.log("APAPAPAPAPAP",house.status);
-            console.log("APAPAPAPAPAP zzzzzzzz",house.random_id);
-
-            await fetch(
-                `https://api.propertyspotter.co.za/house/updateHouseDataByAgent/${house._id}`,
+            const res = await fetch(
+                `https://api.propertyspotter.co.za/house/update/${house._id}`,
                 {
                     method: "POST",
                     headers: {
@@ -132,16 +129,19 @@ const ManageListByAgency = () => {
                     },
                     body: JSON.stringify({
                         status: value,
-                        agencyName: house.agency[0],
-                        // agencyEmail: user.email,
-                        // agencyImage: user.photoURL,
-                        oldStatus:house.status,
-                        random_id:house.random_id
+                        agencyName: user.name,
+                        agencyEmail: user.email,
+                        agencyImage: user.photoURL,
+                        spooterEmail: spooterEmail,
+                        random_id:random_id,
+                        forStatus:true,
+                        house:house,
+                        hasAgent:true
                     }),
                 }
             );
             toast.success(`Successfully ${value}`);
-            fetchListingAgency();
+            fetchListingData();
             document.getElementById(`my_modal_${house._id}`).close();
         } catch (error) {
             console.log(error);
@@ -154,10 +154,11 @@ const ManageListByAgency = () => {
         setSelectedAgency(true);
     };
 
-    const handleSubmit = async (id) => {
+    const handleSubmit = async (house) => {
         try {
+            console.log("HOUSE:::::",house);
             const res = await fetch(
-                `https://api.propertyspotter.co.za/house/update/${id}`,
+                `https://api.propertyspotter.co.za/house/update/${house._id}`,
                 {
                     method: "POST",
                     headers: {
@@ -166,11 +167,14 @@ const ManageListByAgency = () => {
                     body: JSON.stringify({
                         agency: [selectedAgencies],
                         agentName: selectedAgent,
+                        forStatus:false,
+                        house:house,
+                        hasAgent:false
                     }),
                 }
             );
             toast.success(`Successfully Forward to Agency Agent!`);
-            fetchListingAgency();
+            fetchListingData();
             document.getElementById(`my_modal_f${id}`).close();
         } catch (error) {
             console.log(error);
@@ -413,7 +417,9 @@ const ManageListByAgency = () => {
                                                                         ) =>
                                                                             houseUpdate(
                                                                                 e,
-                                                                                house
+                                                                                house,
+                                                                                house?.random_id,
+                                                                                house?.spooterEMail
                                                                             )
                                                                         }
                                                                     >
@@ -428,7 +434,9 @@ const ManageListByAgency = () => {
                                                                         ) =>
                                                                             houseUpdate(
                                                                                 e,
-                                                                                house
+                                                                                house,
+                                                                                house?.random_id,
+                                                                                house?.spooterEMail
                                                                             )
                                                                         }
                                                                     >
@@ -443,7 +451,9 @@ const ManageListByAgency = () => {
                                                                         ) =>
                                                                             houseUpdate(
                                                                                 e,
-                                                                                house
+                                                                                house,
+                                                                                house?.random_id,
+                                                                                house?.spooterEMail
                                                                             )
                                                                         }
                                                                     >
@@ -458,7 +468,9 @@ const ManageListByAgency = () => {
                                                                         ) =>
                                                                             houseUpdate(
                                                                                 e,
-                                                                                house
+                                                                                house,
+                                                                                house?.random_id,
+                                                                                house?.spooterEMail
                                                                             )
                                                                         }
                                                                     >
@@ -473,7 +485,9 @@ const ManageListByAgency = () => {
                                                                         ) =>
                                                                             houseUpdate(
                                                                                 e,
-                                                                                house
+                                                                                house,
+                                                                                house?.random_id,
+                                                                                house?.spooterEMail
                                                                             )
                                                                         }
                                                                     >
@@ -490,7 +504,9 @@ const ManageListByAgency = () => {
                                                                         ) =>
                                                                             houseUpdate(
                                                                                 e,
-                                                                                house
+                                                                                house,
+                                                                                house?.random_id,
+                                                                                house?.spooterEMail
                                                                             )
                                                                         }
                                                                     >
@@ -505,7 +521,9 @@ const ManageListByAgency = () => {
                                                                         ) =>
                                                                             houseUpdate(
                                                                                 e,
-                                                                                house
+                                                                                house,
+                                                                                house?.random_id,
+                                                                                house?.spooterEMail
                                                                             )
                                                                         }
                                                                     >
@@ -521,7 +539,9 @@ const ManageListByAgency = () => {
                                                                         ) =>
                                                                             houseUpdate(
                                                                                 e,
-                                                                                house
+                                                                                house,
+                                                                                house?.random_id,
+                                                                                house?.spooterEMail
                                                                             )
                                                                         }
                                                                     >
@@ -536,7 +556,9 @@ const ManageListByAgency = () => {
                                                                         ) =>
                                                                             houseUpdate(
                                                                                 e,
-                                                                                house
+                                                                                house,
+                                                                                house?.random_id,
+                                                                                house?.spooterEMail
                                                                             )
                                                                         }
                                                                     >
@@ -794,7 +816,7 @@ const ManageListByAgency = () => {
                                                             className="btn btn-accent"
                                                             onClick={(e) =>
                                                                 handleSubmit(
-                                                                    house._id
+                                                                    house
                                                                 )
                                                             }
                                                         >
