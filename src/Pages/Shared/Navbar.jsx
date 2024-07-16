@@ -464,6 +464,105 @@ const Navbar = () => {
                         </li>
                       </>
                     )}
+                    {user && user?.role === "admin" && (
+                      <>
+                        <li>
+                          <Link to="/dashboard" className="justify-between">
+                            Dashboard
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            to="/dashboard/manageAreas"
+                            className="justify-between"
+                          >
+                            Manage Areas
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            to="/dashboard/ManageAllListings/manageListingByAgency"
+                            className="justify-between"
+                          >
+                            Manage Listings
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            to="/dashboard/ManageAllListings/manageAgencies"
+                            className="justify-between"
+                          >
+                            Manage Agencies
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            to="/dashboard/ManageAllListings/manageAgents"
+                            className="justify-between"
+                          >
+                            Manage Agents
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            to="/dashboard/ManageAllListings/manageSpotters"
+                            className="justify-between"
+                          >
+                            Manage Spotters
+                          </Link>
+                        </li>
+                      </>
+                    )}
+
+                    {user && user?.role === "agency" && (
+                      <>
+                        <li>
+                          <Link
+                            to="/dashboard/agency/manageListings"
+                            className="justify-between"
+                          >
+                            Manage Listings
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            to="/dashboard/agency/manageListingsByAgent"
+                            className="justify-between"
+                          >
+                            Listings by Agents
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            to="/dashboard/agency/pendingSpottedListings"
+                            className="justify-between"
+                          >
+                            Spotted Listings Pending (0)
+                          </Link>
+                        </li>
+                      </>
+                    )}
+
+                    {user && user?.role === "agent" && (
+                      <>
+                        <li>
+                          <Link
+                            to="/dashboard/agent/manageListing"
+                            className="justify-between"
+                          >
+                            Manage Listings
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            to="/dashboard/agent/pendingSpottedListings"
+                            className="justify-between"
+                          >
+                            Spotted listings pending
+                          </Link>
+                        </li>
+                      </>
+                    )}
               </ul>
             </div>
           </div>
